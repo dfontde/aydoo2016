@@ -2,8 +2,15 @@ package ar.edu.untref.aydoo;
 
 public class Program 
 {
-    public static final void main(String arg[])
+    public static final void main(String[] args)
     {
-        System.out.println("hola!");
+    	
+    	int numeroAFactorizar = Integer.parseInt("90");
+    	FactoresPrimos factoresPrimos = new FactoresPrimos();
+    	
+    	String factorizacion = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
+    	
+    	System.out.println("Factores primos de " + Integer.toString(numeroAFactorizar) + ": " + factorizacion);
+        
     }
 }
