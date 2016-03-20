@@ -5,7 +5,7 @@ public class Program
     public static final void main(String[] args)
     {
     	
-    	int numeroAFactorizar = Integer.parseInt("90");
+    	int numeroAFactorizar = Integer.parseInt(args[0]);
     	FactoresPrimos factoresPrimos = new FactoresPrimos();
     	
     	String factorizacion = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
