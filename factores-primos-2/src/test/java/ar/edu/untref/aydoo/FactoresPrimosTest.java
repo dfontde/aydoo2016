@@ -51,5 +51,37 @@ public class FactoresPrimosTest {
 		
 	}
 
-
+	@Test 
+	public void testImprimirEnFormatoPrettyConElNumero360() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 360;
+		FactoresPrimos factoresPrimos = new FactoresPrimos();
+		List<Integer> listaDeFactoresPrimosObtenida = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
+		String impresionEsperada = "Factores primos " + Integer.toString(numeroAFactorizar) + ": 2 2 2 3 3 5 ";
+		
+		String impresionObtenida = factoresPrimos.imprimirEnFormatoPretty(numeroAFactorizar, listaDeFactoresPrimosObtenida);
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}
+	
+	@Test 
+	public void testImprimirEnFormatoPrettyConElNumero90() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 90;
+		FactoresPrimos factoresPrimos = new FactoresPrimos();
+		List<Integer> listaDeFactoresPrimosObtenida = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
+		String impresionEsperada = "Factores primos " + Integer.toString(numeroAFactorizar) + ": 2 3 3 5 ";
+		
+		String impresionObtenida = factoresPrimos.imprimirEnFormatoPretty(numeroAFactorizar, listaDeFactoresPrimosObtenida);
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}
+	
+	
 }
