@@ -3,6 +3,7 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class FactoresPrimos {
 
@@ -34,6 +35,20 @@ public class FactoresPrimos {
 		}
 		
 		return impresionFormatoPretty;
+	}
+
+	public String imprimirEnFormatoQuiet(List<Integer> listaDeFactoresPrimos) {
+
+		String impresionFormatoQuiet = "";
+		
+		ListIterator<Integer> itListaFactores = listaDeFactoresPrimos.listIterator(listaDeFactoresPrimos.size());
+			
+		while (itListaFactores.hasPrevious()){
+				impresionFormatoQuiet = impresionFormatoQuiet + Integer.toString(itListaFactores.previous()) + "\n"; 
+		}
+		
+		return impresionFormatoQuiet;
+	
 	}
 
 

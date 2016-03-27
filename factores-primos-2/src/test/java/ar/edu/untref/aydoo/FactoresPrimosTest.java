@@ -83,5 +83,36 @@ public class FactoresPrimosTest {
 		
 	}
 	
+	@Test 
+	public void testImprimirEnFormatoQuietConElNumero90() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 90;
+		FactoresPrimos factoresPrimos = new FactoresPrimos();
+		List<Integer> listaDeFactoresPrimosObtenida = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
+		String impresionEsperada = "5\n3\n3\n2\n";
+		
+		String impresionObtenida = factoresPrimos.imprimirEnFormatoQuiet(listaDeFactoresPrimosObtenida);
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}
+	
+	@Test 
+	public void testImprimirEnFormatoQuietConElNumero360() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 360;
+		FactoresPrimos factoresPrimos = new FactoresPrimos();
+		List<Integer> listaDeFactoresPrimosObtenida = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
+		String impresionEsperada = "5\n3\n3\n2\n2\n2\n";
+		
+		String impresionObtenida = factoresPrimos.imprimirEnFormatoQuiet(listaDeFactoresPrimosObtenida);
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}
 	
 }
