@@ -1,8 +1,8 @@
-l<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ar.edu.untref.aydoo</groupId>
-    <artifactId>nicopaez-ejecicio1</artifactId>
+    <artifactId>factores-primos</artifactId>
     <version>1.0.0</version>
     <dependencies>
         <dependency>
@@ -37,7 +37,7 @@ l<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ma
         </dependency>
     </dependencies>
     <build>
-        <finalName>foo-program</finalName>
+        <finalName>factores-primos</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

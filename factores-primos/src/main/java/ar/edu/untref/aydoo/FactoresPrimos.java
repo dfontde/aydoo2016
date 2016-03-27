@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 public class FactoresPrimos {
 
 	public String descomponerEnFactoresPrimos(int numeroAFactorizar){
-		
+		//Comentario
 		String factorizacion = "";
 		
 		int factor = 2;
