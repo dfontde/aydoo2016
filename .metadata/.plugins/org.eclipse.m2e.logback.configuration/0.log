@@ -1,0 +1,9 @@
+2016-03-27 22:25:31,694 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ar.edu.untref.aydoo:maquina_de_cafe:1.0.0 @ /home/lucas/aydoo2016/maquina_de_cafe/pom.xml.
+2016-03-27 22:25:32,322 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-03-27 22:25:32,333 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/src/main/resources
+2016-03-27 22:25:32,338 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-03-27 22:25:32,339 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/src/test/resources
+2016-03-27 22:26:45,052 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-03-27 22:26:45,053 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/src/main/resources
+2016-03-27 22:26:45,055 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-03-27 22:26:45,055 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/src/test/resources

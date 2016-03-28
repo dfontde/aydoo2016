@@ -1,0 +1,74 @@
+!SESSION 2016-03-27 22:23:52.567 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_AR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-03-27 22:25:32.325
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-03-27 22:25:32.338
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jdt.launching 4 4 2016-03-27 22:26:12.792
+!MESSAGE Exception occurred executing command line.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Exception occurred executing command line.
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:885)
+	at org.eclipse.jdt.internal.launching.StandardVMType.generateLibraryInfo(StandardVMType.java:643)
+	at org.eclipse.jdt.internal.launching.StandardVMType.getLibraryInfo(StandardVMType.java:208)
+	at org.eclipse.jdt.internal.launching.StandardVMType.getVMVersion(StandardVMType.java:244)
+	at org.eclipse.jdt.internal.launching.Standard11xVMType.canDetectDefaultSystemLibraries(Standard11xVMType.java:98)
+	at org.eclipse.jdt.internal.launching.StandardVMType.validateInstallLocation(StandardVMType.java:592)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.search(InstalledJREsBlock.java:1043)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.search(InstalledJREsBlock.java:1059)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.search(InstalledJREsBlock.java:1059)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock$16.run(InstalledJREsBlock.java:881)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: java.io.IOException: Cannot run program "/home/lucas/Apps/jre1.8.0_60/bin/java": error=2, No existe el archivo o el directorio
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1047)
+	at java.lang.Runtime.exec(Runtime.java:617)
+	at java.lang.Runtime.exec(Runtime.java:528)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:879)
+	... 10 more
+Caused by: java.io.IOException: error=2, No existe el archivo o el directorio
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	at java.lang.UNIXProcess.<init>(UNIXProcess.java:187)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:130)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1028)
+	... 13 more
+!SUBENTRY 1 org.eclipse.debug.core 4 125 2016-03-27 22:26:12.793
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "/home/lucas/Apps/jre1.8.0_60/bin/java": error=2, No existe el archivo o el directorio
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1047)
+	at java.lang.Runtime.exec(Runtime.java:617)
+	at java.lang.Runtime.exec(Runtime.java:528)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:879)
+	at org.eclipse.jdt.internal.launching.StandardVMType.generateLibraryInfo(StandardVMType.java:643)
+	at org.eclipse.jdt.internal.launching.StandardVMType.getLibraryInfo(StandardVMType.java:208)
+	at org.eclipse.jdt.internal.launching.StandardVMType.getVMVersion(StandardVMType.java:244)
+	at org.eclipse.jdt.internal.launching.Standard11xVMType.canDetectDefaultSystemLibraries(Standard11xVMType.java:98)
+	at org.eclipse.jdt.internal.launching.StandardVMType.validateInstallLocation(StandardVMType.java:592)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.search(InstalledJREsBlock.java:1043)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.search(InstalledJREsBlock.java:1059)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.search(InstalledJREsBlock.java:1059)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock$16.run(InstalledJREsBlock.java:881)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Caused by: java.io.IOException: error=2, No existe el archivo o el directorio
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	at java.lang.UNIXProcess.<init>(UNIXProcess.java:187)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:130)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1028)
+	... 13 more
+
+!ENTRY org.eclipse.jdt.launching 4 4 2016-03-27 22:26:12.927
+!MESSAGE Failed to retrieve default libraries for /home/lucas/Apps/jre1.8.0_60
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-03-27 22:26:45.052
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-03-27 22:26:45.055
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
