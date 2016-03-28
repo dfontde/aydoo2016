@@ -6,6 +6,12 @@ public class MaquinaExpendedoraDeBebidas {
 	private HacedorDeTeConLeche hacedorDeTeConLeche;
 	private Azucarero azucarero;
 	
+	public MaquinaExpendedoraDeBebidas(){
+		hacedorDeCafeConLeche = new HacedorDeCafeConLeche();
+		hacedorDeTeConLeche = new HacedorDeTeConLeche();
+		azucarero = new Azucarero();
+	}
+	
 	public Vaso hacerCafeConLecheConNDeAzucar(Vaso vaso, int cantidadAzucar){
 	
 		this.hacedorDeCafeConLeche.prepararEnEsteVaso(vaso);
