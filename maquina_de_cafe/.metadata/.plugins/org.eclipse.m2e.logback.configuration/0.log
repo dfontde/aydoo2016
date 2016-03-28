@@ -38,3 +38,7 @@
 2016-03-27 20:15:29,793 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/maquina_de_cafe/src/main/resources
 2016-03-27 20:15:29,798 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-03-27 20:15:29,799 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/maquina_de_cafe/src/test/resources
+2016-03-27 21:57:33,803 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-03-27 21:57:33,836 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/maquina_de_cafe/src/main/resources
+2016-03-27 21:57:33,841 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-03-27 21:57:33,841 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/maquina_de_cafe/maquina_de_cafe/src/test/resources
