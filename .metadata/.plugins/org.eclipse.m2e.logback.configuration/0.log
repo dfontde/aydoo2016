@@ -631,3 +631,19 @@ org.eclipse.core.runtime.CoreException: Launch configuration HacedorDeCafeConLec
 2016-04-03 12:41:52,323 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/main/resources
 2016-04-03 12:41:52,328 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-04-03 12:41:52,329 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/test/resources
+2016-04-03 12:52:00,296 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:52:00,296 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/main/resources
+2016-04-03 12:52:00,298 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:52:00,299 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/test/resources
+2016-04-03 12:52:16,760 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:52:16,761 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/main/resources
+2016-04-03 12:52:16,764 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:52:16,766 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/test/resources
+2016-04-03 12:53:56,015 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:53:56,016 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/main/resources
+2016-04-03 12:53:56,020 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:53:56,020 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/test/resources
+2016-04-03 12:54:08,812 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:54:08,813 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/main/resources
+2016-04-03 12:54:08,830 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-04-03 12:54:08,831 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/lucas/aydoo2016/ejercicio_votacion/src/test/resources
