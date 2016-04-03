@@ -1,5 +1,9 @@
 package ar.edu.untref.aydoo;
 
-public class Partido {
+public enum Partido {
 
+	FPV,
+	OBRERO,
+	CAMBIEMOS
+	
 }

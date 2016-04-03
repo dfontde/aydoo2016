@@ -11,6 +11,7 @@ public class MesaElectoral {
 	public MesaElectoral(){
 		
 		urna = new ArrayList<Voto>();
+		padron = new ArrayList<Votante>();
 		
 	}
 
