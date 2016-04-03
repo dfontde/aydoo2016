@@ -26,6 +26,23 @@ public class IntegracionTest {
 	}
 
 	@Test
+	public void elVotoEmitidoNoEsValidoPorCandidatoInexistente() {
+		
+		boolean esVotoValido = true;
+		List<Candidato> candidatosPosibles = crearListaConCandidatosDePrueba();
+		MesaElectoral mesaElectoral = new MesaElectoral(candidatosPosibles, Provincia.BUENOSAIRES);
+		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
+		Candidato candidatoElegido = new Candidato("Carrio", "Elisa", Partido.CAMBIEMOS);
+		Voto votoElegido = new Voto(candidatoElegido);
+		votante.setVotoElegido(votoElegido);
+	
+		esVotoValido = mesaElectoral.esVotoValido(votante.emitirVoto());
+		
+		Assert.assertFalse(esVotoValido);
+		
+	}
+	
+	@Test
 	public void elVotoEmitidoEsValidoEnBlanco() {
 		
 		boolean esVotoValido = false;

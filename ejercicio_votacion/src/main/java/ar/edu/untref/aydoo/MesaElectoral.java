@@ -14,7 +14,6 @@ public class MesaElectoral {
 	/**
 	 * La mesa electoral se crea considerando el voto en blanco como valido.
 	 */
-	
 	public MesaElectoral(List<Candidato> candidatos, Provincia provincia){
 		Candidato candidatoEnBlanco = new Candidato("", "",null);
 		this.urna = new ArrayList<Voto>();
@@ -23,6 +22,10 @@ public class MesaElectoral {
 		this.provincia = provincia;
 	}
 
+	public List<Candidato> getListaDeCandidatos(){
+		return this.listaDeCandidatos;
+	}
+	
 	public void recibirVoto(Votante votante){
 		urna.add(votante.emitirVoto());
 	}
