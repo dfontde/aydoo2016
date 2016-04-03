@@ -25,6 +25,23 @@ public class IntegracionTest {
 		
 	}
 
+	@Test
+	public void elVotoEmitidoEsValidoEnBlanco() {
+		
+		boolean esVotoValido = false;
+		List<Candidato> candidatosPosibles = crearListaConCandidatosDePrueba();
+		MesaElectoral mesaElectoral = new MesaElectoral(candidatosPosibles, Provincia.BUENOSAIRES);
+		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
+		Candidato candidatoElegido = new Candidato("", "", null);
+		Voto votoElegido = new Voto(candidatoElegido);
+		votante.setVotoElegido(votoElegido);
+	
+		esVotoValido = mesaElectoral.esVotoValido(votante.emitirVoto());
+		
+		Assert.assertTrue(esVotoValido);
+		
+	}
+	
 	private List<Candidato> crearListaConCandidatosDePrueba(){
 		
 		List<Candidato> candidatos = new ArrayList<>(); 

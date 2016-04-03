@@ -11,9 +11,15 @@ public class MesaElectoral {
 	private List<Candidato> listaDeCandidatos;
 	private Provincia provincia;
 
+	/**
+	 * La mesa electoral se crea considerando el voto en blanco como valido.
+	 */
+	
 	public MesaElectoral(List<Candidato> candidatos, Provincia provincia){
+		Candidato candidatoEnBlanco = new Candidato("", "",null);
 		this.urna = new ArrayList<Voto>();
 		this.listaDeCandidatos = candidatos;
+		this.listaDeCandidatos.add(candidatoEnBlanco);
 		this.provincia = provincia;
 	}
 
