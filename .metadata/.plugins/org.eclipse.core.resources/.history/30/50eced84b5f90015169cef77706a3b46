@@ -1,0 +1,18 @@
+package ar.edu.untref.aydoo;
+
+public class Votante {
+
+	private String nombre;
+	private String apellido;
+	private String nroDoc;
+	private Provincia provincia;
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+
+
+}
