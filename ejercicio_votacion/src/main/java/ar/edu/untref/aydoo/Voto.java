@@ -2,15 +2,10 @@ package ar.edu.untref.aydoo;
 
 public class Voto {
 
-	private Provincia provincia;
 	private Candidato candidato;
 	
-	public Provincia getProvincia() {
-		return provincia;
-	}
-	
-	public void setProvincia(Provincia provincia) {
-		this.provincia = provincia;
+	public Voto(Candidato candidato){
+		this.candidato = candidato;
 	}
 	
 	public Candidato getCandidato() {

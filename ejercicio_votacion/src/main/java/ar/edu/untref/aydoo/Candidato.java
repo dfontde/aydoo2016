@@ -5,7 +5,12 @@ public class Candidato {
 	private String nombre;
 	private String apellido;
 	private Partido partido;
-	private Provincia provincia;
+	
+	public Candidato(String nombre, String apellido, Partido partido){
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.partido = partido;
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -30,13 +35,11 @@ public class Candidato {
 	public void setPartido(Partido partido) {
 		this.partido = partido;
 	}
-
-	public Provincia getProvincia() {
-		return provincia;
+	
+	public boolean equals(Candidato candidato){
+		return (this.nombre == candidato.nombre && 
+				this.apellido == candidato.apellido && 
+				this.partido == candidato.partido);		
 	}
-
-	public void setProvincia(Provincia provincia) {
-		this.provincia = provincia;
-	}
-
+	
 }
