@@ -1,2 +1,4 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Test de MaquinaExpendedoraDeBebidas.</message>\n<message>Correcion de las clases HacedorDeCafeConLeche y HacedorDeTeConLeche.</message>\n<message>Test de HacedorDeTeConLeche.</message>\n<message>Test de HacedorDeCafeConLeche</message>\n<message>Test de Lechero</message>\n<message>Test de HacedorDeTeChino</message>\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Borrado de subdirectorio maquina_de_cafe</message>\n<message>Diagrama de secuencia.</message>\n<message>Test de MaquinaExpendedoraDeBebidas.</message>\n<message>Correcion de las clases HacedorDeCafeConLeche y HacedorDeTeConLeche.</message>\n<message>Test de HacedorDeTeConLeche.</message>\n<message>Test de HacedorDeCafeConLeche</message>\n<message>Test de Lechero</message>\n<message>Test de HacedorDeTeChino</message>\n</messages>
 eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/lucas/aydoo2016/ejercicio_votacion"/>
 			<item value="/home/lucas/Escritorio/maquina_de_cafe"/>
 		</list>
 		<list key="projectNameTemplate">
