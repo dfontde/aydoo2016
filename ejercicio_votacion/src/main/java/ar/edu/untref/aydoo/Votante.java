@@ -55,4 +55,9 @@ public class Votante {
 		this.votoElegido = votoElegido;
 	}
 	
+	public boolean equals(Votante votante){
+		return (this.tipoDoc == votante.tipoDoc && 
+				this.nroDoc == votante.nroDoc);		
+	}
+	
 }

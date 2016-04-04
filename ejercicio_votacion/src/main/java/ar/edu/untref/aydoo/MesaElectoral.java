@@ -10,16 +10,18 @@ public class MesaElectoral {
 	private List<Voto> urna;
 	private List<Candidato> listaDeCandidatos;
 	private Provincia provincia;
+	private List<Votante> padronDeLaMesa;
 
 	/**
 	 * La mesa electoral se crea considerando el voto en blanco como valido.
 	 */
-	public MesaElectoral(List<Candidato> candidatos, Provincia provincia){
+	public MesaElectoral(List<Candidato> candidatos, Provincia provincia, List<Votante> padronDeLaMesa){
 		Candidato candidatoEnBlanco = new Candidato("", "",null);
 		this.urna = new ArrayList<Voto>();
 		this.listaDeCandidatos = candidatos;
 		this.listaDeCandidatos.add(candidatoEnBlanco);
-		this.provincia = provincia;
+		this.setProvincia(provincia);
+		this.padronDeLaMesa = padronDeLaMesa;
 	}
 
 	public List<Candidato> getListaDeCandidatos(){
@@ -52,6 +54,39 @@ public class MesaElectoral {
 		}
 		
 		return encontrado;
+	}
+	
+	public Provincia getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(Provincia provincia) {
+		this.provincia = provincia;
+	}
+
+	public void agregarVotanteAlPadronDeLaMesa(Votante votante){
+		padronDeLaMesa.add(votante);
+	}
+	
+	public List<Votante> getPadronDeLaMesa() {
+		return padronDeLaMesa;
+	}
+
+	public void setPadronDeLaMesa(List<Votante> padronDeLaMesa) {
+		this.padronDeLaMesa = padronDeLaMesa;
+	}
+
+	public boolean controlarVotanteEnPadron(Votante votante) {
+				
+		boolean encontrado = false;
+		Iterator<Votante> itPadronDeLaMesa = padronDeLaMesa.iterator();
+		while (itPadronDeLaMesa.hasNext() && !encontrado){
+			if (votante.equals(itPadronDeLaMesa.next())){
+				encontrado = true;
+			}
+		}
+		
+		return encontrado;		
 	}	
 	
 }

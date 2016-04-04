@@ -12,8 +12,7 @@ public class IntegracionTest {
 	public void elVotoEmitidoEsValido() {
 		
 		boolean esVotoValido = false;
-		List<Candidato> candidatosPosibles = crearListaConCandidatosDePrueba();
-		MesaElectoral mesaElectoral = new MesaElectoral(candidatosPosibles, Provincia.BUENOSAIRES);
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 		Candidato candidatoElegido = new Candidato("Pitrola", "Nestor", Partido.OBRERO);
 		Voto votoElegido = new Voto(candidatoElegido);
@@ -29,8 +28,7 @@ public class IntegracionTest {
 	public void elVotoEmitidoNoEsValidoPorCandidatoInexistente() {
 		
 		boolean esVotoValido = true;
-		List<Candidato> candidatosPosibles = crearListaConCandidatosDePrueba();
-		MesaElectoral mesaElectoral = new MesaElectoral(candidatosPosibles, Provincia.BUENOSAIRES);
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 		Candidato candidatoElegido = new Candidato("Carrio", "Elisa", Partido.CAMBIEMOS);
 		Voto votoElegido = new Voto(candidatoElegido);
@@ -46,8 +44,7 @@ public class IntegracionTest {
 	public void elVotoEmitidoEsValidoEnBlanco() {
 		
 		boolean esVotoValido = false;
-		List<Candidato> candidatosPosibles = crearListaConCandidatosDePrueba();
-		MesaElectoral mesaElectoral = new MesaElectoral(candidatosPosibles, Provincia.BUENOSAIRES);
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 		Candidato candidatoElegido = new Candidato("", "", null);
 		Voto votoElegido = new Voto(candidatoElegido);
@@ -56,6 +53,32 @@ public class IntegracionTest {
 		esVotoValido = mesaElectoral.esVotoValido(votante.emitirVoto());
 		
 		Assert.assertTrue(esVotoValido);
+		
+	}
+	
+	@Test
+	public void elVotantePerteneceAlPadronDeLaMesa(){
+		
+		boolean perteneceAlPadronDeLaMesa = false;
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
+	
+		perteneceAlPadronDeLaMesa = mesaElectoral.controlarVotanteEnPadron(votante);
+		
+		Assert.assertTrue(perteneceAlPadronDeLaMesa);		
+		
+	}
+	
+	@Test
+	public void elVotanteNoPerteneceAlPadronDeLaMesa(){
+		
+		boolean perteneceAlPadronDeLaMesa = true;
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		Votante votante = new Votante("Hector", "Felice", "DNI", "2345765");
+	
+		perteneceAlPadronDeLaMesa = mesaElectoral.controlarVotanteEnPadron(votante);
+		
+		Assert.assertFalse(perteneceAlPadronDeLaMesa);		
 		
 	}
 	
@@ -78,5 +101,22 @@ public class IntegracionTest {
 		return candidatos;		
 	}
 
+	private List<Votante> crearListaConVotantesDePrueba() {
+		
+		List<Votante> padronDeLaMesa = new ArrayList<>();
+		Votante votante1 = new Votante("Rosa", "Garcia", "DNI", "5000000");
+		padronDeLaMesa.add(votante1);
+		Votante votante2 = new Votante("Jose", "Lopez", "DNI", "31000000");
+		padronDeLaMesa.add(votante2);
+		Votante votante3 = new Votante("Mateo", "Gomez", "DNI", "32000000");
+		padronDeLaMesa.add(votante3);
+		Votante votante4 = new Votante("Lucas", "Garcia", "DNI", "33000000");
+		padronDeLaMesa.add(votante4);
+		Votante votante5 = new Votante("Gabriel", "Suarez", "DNI", "34000000");
+		padronDeLaMesa.add(votante5);
 
+		return padronDeLaMesa;
+	}
+	
+	
 }
