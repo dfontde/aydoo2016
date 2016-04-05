@@ -17,7 +17,6 @@ hs_err_pid*
 # archivos de configuracion de Eclipse
 /.settings/
 /.metadata/
-/.classpath/
+.classpath
 .project
-
 
