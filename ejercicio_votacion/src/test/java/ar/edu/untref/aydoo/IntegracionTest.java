@@ -136,6 +136,23 @@ public class IntegracionTest {
 		
 	}	
 	
+	@Test
+	public void elPartidoMasVotadoEnBuenosAiresEsCambiemos(){
+		
+		CentroDeComputos centroDeComputos = new CentroDeComputos();
+		MesaElectoral mesaElectoralBuenosAires = crearMesaElectoralConVotosScioliBuenosAires();
+		MesaElectoral mesaElectoralCABA = crearMesaElectoralConVotosMacriCABA();
+		MesaElectoral mesaElectoralBuenosAires2 = crearMesaElectoralConVotosMacriBuenosAires();
+		centroDeComputos.setMesaElectoral(mesaElectoralBuenosAires);
+		centroDeComputos.setMesaElectoral(mesaElectoralCABA);
+		centroDeComputos.setMesaElectoral(mesaElectoralBuenosAires2);
+		
+		Partido partidoMasVotadoObtenido = centroDeComputos.getPartidoMasVotadoPorProvincia(Provincia.BUENOSAIRES);
+			
+		Assert.assertEquals(Partido.CAMBIEMOS, partidoMasVotadoObtenido);		
+		
+	}
+	
 	private List<Candidato> crearListaConCandidatosDePrueba(){
 		
 		List<Candidato> candidatos = new ArrayList<>(); 
@@ -172,6 +189,25 @@ public class IntegracionTest {
 		return padronDeLaMesa;
 	}
 
+	private List<Votante> crearListaConVotantesDePruebaBuenosAires2() {
+		
+		List<Votante> padronDeLaMesa = new ArrayList<>();
+		Votante votante1 = new Votante("Rosa", "Garcia", "DNI", "5000000");
+		padronDeLaMesa.add(votante1);
+		Votante votante2 = new Votante("Jose", "Lopez", "DNI", "31000000");
+		padronDeLaMesa.add(votante2);
+		Votante votante3 = new Votante("Mateo", "Gomez", "DNI", "32000000");
+		padronDeLaMesa.add(votante3);
+		Votante votante4 = new Votante("Lucas", "Garcia", "DNI", "33000000");
+		padronDeLaMesa.add(votante4);
+		Votante votante5 = new Votante("Gabriel", "Suarez", "DNI", "34000000");
+		padronDeLaMesa.add(votante5);
+		Votante votante6 = new Votante("Juan", "Toloza", "DNI", "38000000");
+		padronDeLaMesa.add(votante6);
+		
+		return padronDeLaMesa;
+	}	
+	
 	private List<Votante> crearListaConVotantesDePruebaCABA() {
 		
 		List<Votante> padronDeLaMesa = new ArrayList<>();
@@ -228,6 +264,24 @@ public class IntegracionTest {
 		return mesaElectoralCABA;
 		
 	}
+
+	private MesaElectoral crearMesaElectoralConVotosMacriBuenosAires(){ 
+		
+		MesaElectoral mesaElectoralBuenosAires = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires2());
+		List<Votante> padronDeLaMesaBuenosAires = mesaElectoralBuenosAires.getPadronDeLaMesa();
+		Candidato candidatoMacri = new Candidato("Mauricio", "Macri", Partido.CAMBIEMOS);
+		Voto votoMacri = new Voto(candidatoMacri);
+		Iterator<Votante> itVotantesBuenosAires = padronDeLaMesaBuenosAires.iterator();
+		Votante votanteActualBuenosAires;
+		while (itVotantesBuenosAires.hasNext()){
+			votanteActualBuenosAires = itVotantesBuenosAires.next(); 
+			votanteActualBuenosAires.setVotoElegido(votoMacri);
+			mesaElectoralBuenosAires.recibirVoto(votanteActualBuenosAires);
+		}
+
+		return mesaElectoralBuenosAires;
+		
+	}	
 	
 
 	
