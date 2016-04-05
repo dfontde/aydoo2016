@@ -1,6 +1,7 @@
 package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Assert;
@@ -81,6 +82,28 @@ public class IntegracionTest {
 		Assert.assertFalse(perteneceAlPadronDeLaMesa);		
 		
 	}
+
+
+	@Test
+	public void elCandidatoMasVotadoDeLaMesaEsScioli(){
+		
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		List<Votante> padronDeLaMesa = mesaElectoral.getPadronDeLaMesa();
+		Candidato candidatoScioli = new Candidato("Scioli", "Daniel", Partido.FPV);
+		Voto votoScioli = new Voto(candidatoScioli);
+		Iterator<Votante> itVotantes = padronDeLaMesa.iterator();
+		Votante votanteActual;
+		while (itVotantes.hasNext()){
+			votanteActual = itVotantes.next(); 
+			votanteActual.setVotoElegido(votoScioli);
+			mesaElectoral.recibirVoto(votanteActual);
+		}
+		
+		Candidato candidatoMasVotadoObtenido = mesaElectoral.getCandidatoMasVotado();
+			
+		Assert.assertEquals(candidatoScioli, candidatoScioli);		
+		
+	}	
 	
 	private List<Candidato> crearListaConCandidatosDePrueba(){
 		
@@ -100,7 +123,7 @@ public class IntegracionTest {
 		
 		return candidatos;		
 	}
-
+	
 	private List<Votante> crearListaConVotantesDePrueba() {
 		
 		List<Votante> padronDeLaMesa = new ArrayList<>();

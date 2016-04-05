@@ -32,11 +32,38 @@ public class MesaElectoral {
 		urna.add(votante.emitirVoto());
 	}
 	
-	public HashMap<Candidato, Integer> getCandidatoMasVotado(){
-		return null;
+	public Candidato getCandidatoMasVotado(){
+		
+		Candidato candidatoMasVotado = null;
+		HashMap<Candidato, Integer> recuentoVotosPorCandidato = getRecuentoDeVotosTotal();		
+		
+		
+		
+		
+		return candidatoMasVotado;
 	}
 	
-	public HashMap<Candidato, Integer> getPartidoMasVotadoPorProvincia(Provincia provincia){
+	private HashMap<Candidato, Integer> getRecuentoDeVotosTotal() {
+		
+		HashMap<Candidato, Integer> recuentoVotosPorCandidato = new HashMap<Candidato, Integer>();
+		Candidato candidatoVotado;
+		
+		int cantidadDeVotos;
+		Iterator<Voto> itUrna = urna.iterator();
+		while (itUrna.hasNext()){
+			candidatoVotado = itUrna.next().getCandidato();
+			if (recuentoVotosPorCandidato.get(candidatoVotado) == null){
+				cantidadDeVotos = 1;
+			}else{
+				cantidadDeVotos = recuentoVotosPorCandidato.get(candidatoVotado) + 1;
+			}
+			recuentoVotosPorCandidato.put(candidatoVotado, cantidadDeVotos);	
+		}		
+		
+		return recuentoVotosPorCandidato;
+	}
+
+	public Partido getPartidoMasVotadoPorProvincia(Provincia provincia){
 		return null;
 	}
 
