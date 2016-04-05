@@ -72,6 +72,27 @@ public class MesaElectoral {
 		return recuentoVotosPorCandidato;
 	}
 
+	public HashMap<Partido, Integer> getRecuentoDeVotosTotalPorPartido() {
+		
+		HashMap<Partido, Integer> recuentoVotosPorPartido = new HashMap<Partido, Integer>();
+		Partido partidoVotado;
+		int cantidadDeVotos;
+		Iterator<Voto> itUrna = urna.iterator();
+		
+		while (itUrna.hasNext()){
+			partidoVotado = itUrna.next().getCandidato().getPartido();
+			if (recuentoVotosPorPartido.get(partidoVotado) == null){
+				cantidadDeVotos = 1;
+			}else{
+				cantidadDeVotos = recuentoVotosPorPartido.get(partidoVotado) + 1;
+			}
+			recuentoVotosPorPartido.put(partidoVotado, cantidadDeVotos);	
+		}		
+		
+		return recuentoVotosPorPartido;
+	}
+	
+	
 	/**
 	 * Un voto es considerado valido si el candidato forma parte de la lista de candidatos de la mesa. 
 	 */

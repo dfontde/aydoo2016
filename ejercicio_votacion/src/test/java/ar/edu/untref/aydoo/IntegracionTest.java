@@ -109,36 +109,32 @@ public class IntegracionTest {
 	public void elCandidatoMasVotadoANivelNacionalEsMacri(){
 		
 		CentroDeComputos centroDeComputos = new CentroDeComputos();
-		MesaElectoral mesaElectoralBuenosAires = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
-		List<Votante> padronDeLaMesaBuenosAires = mesaElectoralBuenosAires.getPadronDeLaMesa();
-		Candidato candidatoScioli = new Candidato("Daniel", "Scioli", Partido.FPV);
-		Voto votoScioli = new Voto(candidatoScioli);
-		Iterator<Votante> itVotantesBuenosAires = padronDeLaMesaBuenosAires.iterator();
-		Votante votanteActualBuenosAires;
-		while (itVotantesBuenosAires.hasNext()){
-			votanteActualBuenosAires = itVotantesBuenosAires.next(); 
-			votanteActualBuenosAires.setVotoElegido(votoScioli);
-			mesaElectoralBuenosAires.recibirVoto(votanteActualBuenosAires);
-		}
-		MesaElectoral mesaElectoralCABA = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.CABA, crearListaConVotantesDePruebaCABA());
-		List<Votante> padronDeLaMesaCABA = mesaElectoralCABA.getPadronDeLaMesa();
+		MesaElectoral mesaElectoralBuenosAires = crearMesaElectoralConVotosScioliBuenosAires();
+		MesaElectoral mesaElectoralCABA = crearMesaElectoralConVotosMacriCABA();		
 		Candidato candidatoMacri = new Candidato("Mauricio", "Macri", Partido.CAMBIEMOS);
-		Voto votoMacri = new Voto(candidatoMacri);
-		Iterator<Votante> itVotantesCABA = padronDeLaMesaCABA.iterator();
-		Votante votanteActualCABA;
-		while (itVotantesCABA.hasNext()){
-			votanteActualCABA = itVotantesCABA.next(); 
-			votanteActualCABA.setVotoElegido(votoMacri);
-			mesaElectoralCABA.recibirVoto(votanteActualCABA);
-		}
 		centroDeComputos.setMesaElectoral(mesaElectoralBuenosAires);
 		centroDeComputos.setMesaElectoral(mesaElectoralCABA);
 		
 		Candidato candidatoMasVotadoObtenido = centroDeComputos.getCandidatoMasVotadoANivelNacional();
 			
-		Assert.assertEquals(candidatoMacri, candidatoMasVotadoObtenido);		
+		Assert.assertTrue(candidatoMacri.equals(candidatoMasVotadoObtenido));		
 		
 	}
+	
+	@Test
+	public void elPartidoMasVotadoEnBuenosAiresEsFPV(){
+		
+		CentroDeComputos centroDeComputos = new CentroDeComputos();
+		MesaElectoral mesaElectoralBuenosAires = crearMesaElectoralConVotosScioliBuenosAires();
+		MesaElectoral mesaElectoralCABA = crearMesaElectoralConVotosMacriCABA();		
+		centroDeComputos.setMesaElectoral(mesaElectoralBuenosAires);
+		centroDeComputos.setMesaElectoral(mesaElectoralCABA);
+		
+		Partido partidoMasVotadoObtenido = centroDeComputos.getPartidoMasVotadoPorProvincia(Provincia.BUENOSAIRES);
+			
+		Assert.assertEquals(Partido.FPV, partidoMasVotadoObtenido);		
+		
+	}	
 	
 	private List<Candidato> crearListaConCandidatosDePrueba(){
 		
@@ -196,6 +192,43 @@ public class IntegracionTest {
 		
 		return padronDeLaMesa;
 	}	
+
+	private MesaElectoral crearMesaElectoralConVotosScioliBuenosAires(){ 
 	
+		MesaElectoral mesaElectoralBuenosAires = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
+		List<Votante> padronDeLaMesaBuenosAires = mesaElectoralBuenosAires.getPadronDeLaMesa();
+		Candidato candidatoScioli = new Candidato("Daniel", "Scioli", Partido.FPV);
+		Voto votoScioli = new Voto(candidatoScioli);
+		Iterator<Votante> itVotantesBuenosAires = padronDeLaMesaBuenosAires.iterator();
+		Votante votanteActualBuenosAires;
+		while (itVotantesBuenosAires.hasNext()){
+			votanteActualBuenosAires = itVotantesBuenosAires.next(); 
+			votanteActualBuenosAires.setVotoElegido(votoScioli);
+			mesaElectoralBuenosAires.recibirVoto(votanteActualBuenosAires);
+		}
+		
+		return mesaElectoralBuenosAires;
+	
+	}
+	
+	private MesaElectoral crearMesaElectoralConVotosMacriCABA(){ 
+		
+		MesaElectoral mesaElectoralCABA = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.CABA, crearListaConVotantesDePruebaCABA());
+		List<Votante> padronDeLaMesaCABA = mesaElectoralCABA.getPadronDeLaMesa();
+		Candidato candidatoMacri = new Candidato("Mauricio", "Macri", Partido.CAMBIEMOS);
+		Voto votoMacri = new Voto(candidatoMacri);
+		Iterator<Votante> itVotantesCABA = padronDeLaMesaCABA.iterator();
+		Votante votanteActualCABA;
+		while (itVotantesCABA.hasNext()){
+			votanteActualCABA = itVotantesCABA.next(); 
+			votanteActualCABA.setVotoElegido(votoMacri);
+			mesaElectoralCABA.recibirVoto(votanteActualCABA);
+		}
+
+		return mesaElectoralCABA;
+		
+	}
+	
+
 	
 }

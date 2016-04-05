@@ -60,10 +60,51 @@ public class CentroDeComputos {
 	
 	public Partido getPartidoMasVotadoPorProvincia(Provincia provincia){
 		
-		Partido partidoGanadorDeLaProvincia = null;
+		Partido partidoMasVotadoDeLaProvincia = null;
+		HashMap<Partido, Integer> recuentoVotosPorPartido = getRecuentoDeVotosTotalPorPartidoPorProvincia(provincia);		
+		Entry<Partido, Integer> partidoYVotos;
+		int cantidadDeVotos = 0;
+
+		Iterator<Entry<Partido, Integer>> itRecuentoVotosPorCandidato = recuentoVotosPorPartido.entrySet().iterator();
+        while(itRecuentoVotosPorCandidato.hasNext()) {
+        	partidoYVotos = itRecuentoVotosPorCandidato.next();
+        	if (partidoYVotos.getValue() > cantidadDeVotos){
+        		cantidadDeVotos = partidoYVotos.getValue();
+        		partidoMasVotadoDeLaProvincia = (Partido)partidoYVotos.getKey(); 
+        	}
+        }
 		
-		return partidoGanadorDeLaProvincia;
+		return partidoMasVotadoDeLaProvincia;
 	}
 	
-
+	private HashMap<Partido, Integer> getRecuentoDeVotosTotalPorPartidoPorProvincia(Provincia provincia) {
+		
+		HashMap<Partido, Integer> recuentoVotosPorMesa = new HashMap<Partido, Integer>();
+		HashMap<Partido, Integer> recuentoVotosTotal = new HashMap<Partido, Integer>();
+		Iterator<MesaElectoral> itMesasElectorales = mesasElectorales.iterator();
+		Iterator<Entry<Partido, Integer>> itRecuentoVotosPorMesa;
+		Entry<Partido, Integer> partidoYVotos;
+		int cantidadDeVotosDeOtrasMesa = 0;
+		MesaElectoral mesaElectoral;
+		
+		while (itMesasElectorales.hasNext()){
+			mesaElectoral = itMesasElectorales.next();
+			if (mesaElectoral.getProvincia() == provincia){
+				recuentoVotosPorMesa = mesaElectoral.getRecuentoDeVotosTotalPorPartido();
+				itRecuentoVotosPorMesa = recuentoVotosPorMesa.entrySet().iterator();
+		        while(itRecuentoVotosPorMesa.hasNext()) {
+		        	partidoYVotos = itRecuentoVotosPorMesa.next();
+		        	cantidadDeVotosDeOtrasMesa = 0;
+		        	if (recuentoVotosTotal.get(partidoYVotos.getKey()) != null){
+		        		cantidadDeVotosDeOtrasMesa = recuentoVotosTotal.get(partidoYVotos.getValue());
+		        	}
+		        	recuentoVotosTotal.put(partidoYVotos.getKey(), partidoYVotos.getValue() + cantidadDeVotosDeOtrasMesa);
+		        }
+			}	
+		}
+		
+		return recuentoVotosTotal;
+	}
+	
+	
 }
