@@ -37,21 +37,22 @@ public class MesaElectoral {
 		
 		Candidato candidatoMasVotado = null;
 		HashMap<Candidato, Integer> recuentoVotosPorCandidato = getRecuentoDeVotosTotal();		
+		Entry<Candidato, Integer> candidatoYVotos;
 		int cantidadDeVotos = 0;
 
-		Iterator it = recuentoVotosPorCandidato.entrySet().iterator();
-        while(it.hasNext()) {
-        	HashMap.Entry ent = (HashMap.Entry)it.next();
-        	if ((int) ent.getValue() > cantidadDeVotos){
-        		cantidadDeVotos = (int) ent.getValue();
-        		candidatoMasVotado = (Candidato)ent.getKey(); 
+		Iterator<Entry<Candidato, Integer>> itRecuentoVotosPorCandidato = recuentoVotosPorCandidato.entrySet().iterator();
+        while(itRecuentoVotosPorCandidato.hasNext()) {
+        	candidatoYVotos = itRecuentoVotosPorCandidato.next();
+        	if (candidatoYVotos.getValue() > cantidadDeVotos){
+        		cantidadDeVotos = candidatoYVotos.getValue();
+        		candidatoMasVotado = (Candidato)candidatoYVotos.getKey(); 
         	}
         }
 		
 		return candidatoMasVotado;
 	}
 	
-	private HashMap<Candidato, Integer> getRecuentoDeVotosTotal() {
+	public HashMap<Candidato, Integer> getRecuentoDeVotosTotal() {
 		
 		HashMap<Candidato, Integer> recuentoVotosPorCandidato = new HashMap<Candidato, Integer>();
 		Candidato candidatoVotado;
@@ -69,10 +70,6 @@ public class MesaElectoral {
 		}		
 		
 		return recuentoVotosPorCandidato;
-	}
-
-	public Partido getPartidoMasVotadoPorProvincia(Provincia provincia){
-		return null;
 	}
 
 	/**

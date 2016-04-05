@@ -13,7 +13,7 @@ public class IntegracionTest {
 	public void elVotoEmitidoEsValido() {
 		
 		boolean esVotoValido = false;
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 		Candidato candidatoElegido = new Candidato("Pitrola", "Nestor", Partido.OBRERO);
 		Voto votoElegido = new Voto(candidatoElegido);
@@ -29,7 +29,7 @@ public class IntegracionTest {
 	public void elVotoEmitidoNoEsValidoPorCandidatoInexistente() {
 		
 		boolean esVotoValido = true;
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 		Candidato candidatoElegido = new Candidato("Carrio", "Elisa", Partido.CAMBIEMOS);
 		Voto votoElegido = new Voto(candidatoElegido);
@@ -45,7 +45,7 @@ public class IntegracionTest {
 	public void elVotoEmitidoEsValidoEnBlanco() {
 		
 		boolean esVotoValido = false;
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 		Candidato candidatoElegido = new Candidato("", "", null);
 		Voto votoElegido = new Voto(candidatoElegido);
@@ -61,7 +61,7 @@ public class IntegracionTest {
 	public void elVotantePerteneceAlPadronDeLaMesa(){
 		
 		boolean perteneceAlPadronDeLaMesa = false;
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
 		Votante votante = new Votante("Rosa", "Garcia", "DNI", "5000000");
 	
 		perteneceAlPadronDeLaMesa = mesaElectoral.controlarVotanteEnPadron(votante);
@@ -74,7 +74,7 @@ public class IntegracionTest {
 	public void elVotanteNoPerteneceAlPadronDeLaMesa(){
 		
 		boolean perteneceAlPadronDeLaMesa = true;
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
 		Votante votante = new Votante("Hector", "Felice", "DNI", "2345765");
 	
 		perteneceAlPadronDeLaMesa = mesaElectoral.controlarVotanteEnPadron(votante);
@@ -87,7 +87,7 @@ public class IntegracionTest {
 	@Test
 	public void elCandidatoMasVotadoDeLaMesaEsScioli(){
 		
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
 		List<Votante> padronDeLaMesa = mesaElectoral.getPadronDeLaMesa();
 		Candidato candidatoScioli = new Candidato("Scioli", "Daniel", Partido.FPV);
 		Voto votoScioli = new Voto(candidatoScioli);
@@ -98,31 +98,45 @@ public class IntegracionTest {
 			votanteActual.setVotoElegido(votoScioli);
 			mesaElectoral.recibirVoto(votanteActual);
 		}
-		
+
 		Candidato candidatoMasVotadoObtenido = mesaElectoral.getCandidatoMasVotado();
 			
 		Assert.assertEquals(candidatoScioli, candidatoMasVotadoObtenido);		
 		
 	}	
-	
+		
 	@Test
-	public void elCandidatoMasVotadoDeLaMesaNoEsSanz(){
+	public void elCandidatoMasVotadoANivelNacionalEsMacri(){
 		
-		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
-		List<Votante> padronDeLaMesa = mesaElectoral.getPadronDeLaMesa();
-		Candidato candidatoScioli = new Candidato("Sanz", "Eduardo", Partido.CAMBIEMOS);
+		CentroDeComputos centroDeComputos = new CentroDeComputos();
+		MesaElectoral mesaElectoralBuenosAires = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePruebaBuenosAires());
+		List<Votante> padronDeLaMesaBuenosAires = mesaElectoralBuenosAires.getPadronDeLaMesa();
+		Candidato candidatoScioli = new Candidato("Daniel", "Scioli", Partido.FPV);
 		Voto votoScioli = new Voto(candidatoScioli);
-		Iterator<Votante> itVotantes = padronDeLaMesa.iterator();
-		Votante votanteActual;
-		while (itVotantes.hasNext()){
-			votanteActual = itVotantes.next(); 
-			votanteActual.setVotoElegido(votoScioli);
-			mesaElectoral.recibirVoto(votanteActual);
+		Iterator<Votante> itVotantesBuenosAires = padronDeLaMesaBuenosAires.iterator();
+		Votante votanteActualBuenosAires;
+		while (itVotantesBuenosAires.hasNext()){
+			votanteActualBuenosAires = itVotantesBuenosAires.next(); 
+			votanteActualBuenosAires.setVotoElegido(votoScioli);
+			mesaElectoralBuenosAires.recibirVoto(votanteActualBuenosAires);
 		}
+		MesaElectoral mesaElectoralCABA = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.CABA, crearListaConVotantesDePruebaCABA());
+		List<Votante> padronDeLaMesaCABA = mesaElectoralCABA.getPadronDeLaMesa();
+		Candidato candidatoMacri = new Candidato("Mauricio", "Macri", Partido.CAMBIEMOS);
+		Voto votoMacri = new Voto(candidatoMacri);
+		Iterator<Votante> itVotantesCABA = padronDeLaMesaCABA.iterator();
+		Votante votanteActualCABA;
+		while (itVotantesCABA.hasNext()){
+			votanteActualCABA = itVotantesCABA.next(); 
+			votanteActualCABA.setVotoElegido(votoMacri);
+			mesaElectoralCABA.recibirVoto(votanteActualCABA);
+		}
+		centroDeComputos.setMesaElectoral(mesaElectoralBuenosAires);
+		centroDeComputos.setMesaElectoral(mesaElectoralCABA);
 		
-		Candidato candidatoMasVotadoObtenido = mesaElectoral.getCandidatoMasVotado();
+		Candidato candidatoMasVotadoObtenido = centroDeComputos.getCandidatoMasVotadoANivelNacional();
 			
-		Assert.assertEquals(candidatoScioli, candidatoMasVotadoObtenido);		
+		Assert.assertEquals(candidatoMacri, candidatoMasVotadoObtenido);		
 		
 	}
 	
@@ -145,7 +159,7 @@ public class IntegracionTest {
 		return candidatos;		
 	}
 	
-	private List<Votante> crearListaConVotantesDePrueba() {
+	private List<Votante> crearListaConVotantesDePruebaBuenosAires() {
 		
 		List<Votante> padronDeLaMesa = new ArrayList<>();
 		Votante votante1 = new Votante("Rosa", "Garcia", "DNI", "5000000");
@@ -161,6 +175,27 @@ public class IntegracionTest {
 
 		return padronDeLaMesa;
 	}
+
+	private List<Votante> crearListaConVotantesDePruebaCABA() {
+		
+		List<Votante> padronDeLaMesa = new ArrayList<>();
+		Votante votante1 = new Votante("Juan Ignacio", "Araguren", "DNI", "2900000");
+		padronDeLaMesa.add(votante1);
+		Votante votante2 = new Votante("Jose", "Lopez Vazquez", "DNI", "24000000");
+		padronDeLaMesa.add(votante2);
+		Votante votante3 = new Votante("Mateo", "Uriburu", "DNI", "22000000");
+		padronDeLaMesa.add(votante3);
+		Votante votante4 = new Votante("Pedro", "Amenabar", "DNI", "20000000");
+		padronDeLaMesa.add(votante4);
+		Votante votante5 = new Votante("Gabriel", "Marquez", "DNI", "18000000");
+		padronDeLaMesa.add(votante5);
+		Votante votante6 = new Votante("Magdalena", "Uriburu", "DNI", "36000000");
+		padronDeLaMesa.add(votante6);
+		Votante votante7 = new Votante("Gabriela", "Mistrali", "DNI", "38000000");
+		padronDeLaMesa.add(votante7);
+		
+		return padronDeLaMesa;
+	}	
 	
 	
 }
