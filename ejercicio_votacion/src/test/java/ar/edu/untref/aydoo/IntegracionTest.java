@@ -101,9 +101,30 @@ public class IntegracionTest {
 		
 		Candidato candidatoMasVotadoObtenido = mesaElectoral.getCandidatoMasVotado();
 			
-		Assert.assertEquals(candidatoScioli, candidatoScioli);		
+		Assert.assertEquals(candidatoScioli, candidatoMasVotadoObtenido);		
 		
 	}	
+	
+	@Test
+	public void elCandidatoMasVotadoDeLaMesaNoEsSanz(){
+		
+		MesaElectoral mesaElectoral = new MesaElectoral(crearListaConCandidatosDePrueba(), Provincia.BUENOSAIRES, crearListaConVotantesDePrueba());
+		List<Votante> padronDeLaMesa = mesaElectoral.getPadronDeLaMesa();
+		Candidato candidatoScioli = new Candidato("Sanz", "Eduardo", Partido.CAMBIEMOS);
+		Voto votoScioli = new Voto(candidatoScioli);
+		Iterator<Votante> itVotantes = padronDeLaMesa.iterator();
+		Votante votanteActual;
+		while (itVotantes.hasNext()){
+			votanteActual = itVotantes.next(); 
+			votanteActual.setVotoElegido(votoScioli);
+			mesaElectoral.recibirVoto(votanteActual);
+		}
+		
+		Candidato candidatoMasVotadoObtenido = mesaElectoral.getCandidatoMasVotado();
+			
+		Assert.assertEquals(candidatoScioli, candidatoMasVotadoObtenido);		
+		
+	}
 	
 	private List<Candidato> crearListaConCandidatosDePrueba(){
 		

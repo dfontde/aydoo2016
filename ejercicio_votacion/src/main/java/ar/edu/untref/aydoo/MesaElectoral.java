@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 
 public class MesaElectoral {
 
@@ -36,9 +37,16 @@ public class MesaElectoral {
 		
 		Candidato candidatoMasVotado = null;
 		HashMap<Candidato, Integer> recuentoVotosPorCandidato = getRecuentoDeVotosTotal();		
-		
-		
-		
+		int cantidadDeVotos = 0;
+
+		Iterator it = recuentoVotosPorCandidato.entrySet().iterator();
+        while(it.hasNext()) {
+        	HashMap.Entry ent = (HashMap.Entry)it.next();
+        	if ((int) ent.getValue() > cantidadDeVotos){
+        		cantidadDeVotos = (int) ent.getValue();
+        		candidatoMasVotado = (Candidato)ent.getKey(); 
+        	}
+        }
 		
 		return candidatoMasVotado;
 	}
@@ -47,9 +55,9 @@ public class MesaElectoral {
 		
 		HashMap<Candidato, Integer> recuentoVotosPorCandidato = new HashMap<Candidato, Integer>();
 		Candidato candidatoVotado;
-		
 		int cantidadDeVotos;
 		Iterator<Voto> itUrna = urna.iterator();
+		
 		while (itUrna.hasNext()){
 			candidatoVotado = itUrna.next().getCandidato();
 			if (recuentoVotosPorCandidato.get(candidatoVotado) == null){
