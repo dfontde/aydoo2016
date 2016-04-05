@@ -192,17 +192,17 @@ public class IntegracionTest {
 	private List<Votante> crearListaConVotantesDePruebaBuenosAires2() {
 		
 		List<Votante> padronDeLaMesa = new ArrayList<>();
-		Votante votante1 = new Votante("Rosa", "Garcia", "DNI", "5000000");
+		Votante votante1 = new Votante("Maria", "Jimenez", "LE", "15000000");
 		padronDeLaMesa.add(votante1);
-		Votante votante2 = new Votante("Jose", "Lopez", "DNI", "31000000");
+		Votante votante2 = new Votante("Matias", "Tortorella", "LC", "45000000");
 		padronDeLaMesa.add(votante2);
-		Votante votante3 = new Votante("Mateo", "Gomez", "DNI", "32000000");
+		Votante votante3 = new Votante("Pablo", "Renos", "DNI", "32450000");
 		padronDeLaMesa.add(votante3);
-		Votante votante4 = new Votante("Lucas", "Garcia", "DNI", "33000000");
+		Votante votante4 = new Votante("Gabriel", "Fenos", "DNI", "33000123");
 		padronDeLaMesa.add(votante4);
-		Votante votante5 = new Votante("Gabriel", "Suarez", "DNI", "34000000");
+		Votante votante5 = new Votante("Ariel", "Larralde", "DNI", "28780000");
 		padronDeLaMesa.add(votante5);
-		Votante votante6 = new Votante("Juan", "Toloza", "DNI", "38000000");
+		Votante votante6 = new Votante("Nicolas", "Gutierrez", "DNI", "30001200");
 		padronDeLaMesa.add(votante6);
 		
 		return padronDeLaMesa;
@@ -221,9 +221,9 @@ public class IntegracionTest {
 		padronDeLaMesa.add(votante4);
 		Votante votante5 = new Votante("Gabriel", "Marquez", "DNI", "18000000");
 		padronDeLaMesa.add(votante5);
-		Votante votante6 = new Votante("Magdalena", "Uriburu", "DNI", "36000000");
+		Votante votante6 = new Votante("Magdalena", "Guizasu", "DNI", "36000000");
 		padronDeLaMesa.add(votante6);
-		Votante votante7 = new Votante("Gabriela", "Mistrali", "DNI", "38000000");
+		Votante votante7 = new Votante("Gabriela", "Mistrali", "DNI", "38000770");
 		padronDeLaMesa.add(votante7);
 		
 		return padronDeLaMesa;

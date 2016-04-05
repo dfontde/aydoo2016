@@ -30,7 +30,9 @@ public class MesaElectoral {
 	}
 	
 	public void recibirVoto(Votante votante){
-		urna.add(votante.emitirVoto());
+		if (controlarVotanteEnPadron(votante)){
+			urna.add(votante.emitirVoto());
+		}
 	}
 	
 	public Candidato getCandidatoMasVotado(){
