@@ -6,7 +6,7 @@ import org.junit.Test;
 public class IntegracionTest {
 	
 	@Test
-	public void test() {
+	public void calcularMontoACobrar() {
 		
 		
 		//A
