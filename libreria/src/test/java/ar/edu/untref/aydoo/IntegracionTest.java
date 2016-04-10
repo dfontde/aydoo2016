@@ -19,9 +19,10 @@ public class IntegracionTest {
 		compra.agregarProducto(articuloDeLibreriaLapicera1);
 		Producto articuloDeLibreriaLapicera2 = new ArticuloDeLibreria("Lapicera", new java.math.BigDecimal("5.00")); 
 		compra.agregarProducto(articuloDeLibreriaLapicera2);
-		Producto revistaElGrafico = new Revista("El Grafico", new java.math.BigDecimal("30.00")); 
+		Producto revistaElGrafico = new DiariosYRevistas("El Grafico", new java.math.BigDecimal("30.00")); 
 		compra.agregarProducto(revistaElGrafico);
 		BigDecimal montoACobrarEsperado = new java.math.BigDecimal("90.00");
+		libreria.agregarCompra(compra);
 		
 		BigDecimal montoACobrarObtenido = libreria.calcularMontoACobrar(Mes.AGOSTO, cliente);
 		
