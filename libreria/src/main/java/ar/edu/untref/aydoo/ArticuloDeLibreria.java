@@ -2,8 +2,19 @@ package ar.edu.untref.aydoo;
 
 import java.math.BigDecimal;
 
-public class ArticuloDeLibreria {
+public class ArticuloDeLibreria extends Producto{
 
+	private BigDecimal porcentajeIVA = new BigDecimal("21.00");
 	private BigDecimal iva;
+	
+	public ArticuloDeLibreria(String descripcion, BigDecimal precio){
+		super(descripcion, precio);
+		BigDecimal divisorParaIVA = new BigDecimal("100.00");
+		this.iva = (precio.multiply(porcentajeIVA)).divide(divisorParaIVA);
+	}
+	
+	public BigDecimal getPrecioConIVA(){
+		return this.iva.add(this.getPrecio());
+	}
 	
 }

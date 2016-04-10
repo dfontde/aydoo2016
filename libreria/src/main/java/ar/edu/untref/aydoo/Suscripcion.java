@@ -1,7 +1,11 @@
 package ar.edu.untref.aydoo;
 
-public class Suscripcion extends Producto{
+import java.math.BigDecimal;
 
-	private Periodicidad periodicidad;
+public class Suscripcion extends Producto{
+	
+	public Suscripcion(String descripcion, BigDecimal precio) {
+		super(descripcion, precio);
+	}
 
 }
