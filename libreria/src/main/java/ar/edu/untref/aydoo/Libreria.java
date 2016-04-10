@@ -12,7 +12,7 @@ public class Libreria {
 	
 	public Libreria(String nombre){
 		this.nombre = nombre;
-		compras = new ArrayList<Compra>();
+		this.compras = new ArrayList<Compra>();
 	}
 	
 	public BigDecimal calcularMontoACobrar(Mes mes, Cliente cliente){	
@@ -59,6 +59,5 @@ public class Libreria {
 	public void agregarCompra(Compra compra) {
 		this.compras.add(compra);
 	}
-	
 	
 }
