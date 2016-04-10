@@ -9,13 +9,14 @@ public class Compra {
 	private Cliente cliente;
 	private List<Producto> productos;
 	
-	public Compra(Cliente cliente){
+	public Compra(Mes mes, Cliente cliente){
+		this.mes = mes;
 		this.setCliente(cliente);
-		this.productos = new ArrayList<Producto>();
+		this.setProductos(new ArrayList<Producto>());
 	}
 	
 	public void agregarProducto(Producto producto){
-		productos.add(producto);
+		getProductos().add(producto);
 	}
 
 	public Mes getMes() {
@@ -32,6 +33,14 @@ public class Compra {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public List<Producto> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(List<Producto> productos) {
+		this.productos = productos;
 	}
 	
 }

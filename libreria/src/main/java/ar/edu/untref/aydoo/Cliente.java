@@ -36,4 +36,8 @@ public class Cliente {
 		this.direccion = direccion;
 	}
 	
+	public boolean equal(Cliente cliente) {
+		return (this.nombre == cliente.nombre && this.apellido == cliente.apellido);
+	}
+
 }

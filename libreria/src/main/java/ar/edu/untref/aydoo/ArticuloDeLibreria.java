@@ -13,8 +13,9 @@ public class ArticuloDeLibreria extends Producto{
 		this.iva = (precio.multiply(porcentajeIVA)).divide(divisorParaIVA);
 	}
 	
-	public BigDecimal getPrecioConIVA(){
-		return this.iva.add(this.getPrecio());
+	@Override
+	public BigDecimal getPrecio(){
+		return this.iva.add(super.getPrecio());
 	}
 	
 }
