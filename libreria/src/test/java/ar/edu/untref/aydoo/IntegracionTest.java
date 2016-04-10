@@ -13,7 +13,7 @@ public class IntegracionTest {
 		Cliente cliente = new Cliente("Juan", "Lopez", "Bonifacini 3950");
 		Libreria libreria = new Libreria("Gamma");
 		Compra compra = new Compra(Mes.AGOSTO, cliente);
-		Producto libroElHobbit = new Libro("El Hobbit", new java.math.BigDecimal("50.00"));
+		Producto libroElHobbit = new Producto("El Hobbit", new java.math.BigDecimal("50.00"));
 		compra.agregarProducto(libroElHobbit);
 		Producto articuloDeLibreriaLapicera1 = new ArticuloDeLibreria("Lapicera", new java.math.BigDecimal("5.00")); 
 		compra.agregarProducto(articuloDeLibreriaLapicera1);
@@ -40,7 +40,9 @@ public class IntegracionTest {
 		compra.agregarProducto(diarioPagina12);
 		DiarioYRevista revistaBarcelona = new DiarioYRevista("Revista Barcelona", new java.math.BigDecimal("20.00"));
 		revistaBarcelona.setPeriodicidad(Periodicidad.QUINCENAL);
-		Producto suscripcionAnualARevistaBarcelona = new Suscripcion("Suscripcion anual a Revista Barcelona", new java.math.BigDecimal("20.00"), revistaBarcelona);		
+		Producto suscripcionAnualARevistaBarcelona = new Suscripcion("Suscripcion anual a Revista Barcelona", 
+																	new java.math.BigDecimal("20.00"), 
+																	revistaBarcelona, TipoSuscripcion.ANUAL);		
 		compra.agregarProducto(suscripcionAnualARevistaBarcelona);				
 		
 		BigDecimal montoACobrarEsperado = new java.math.BigDecimal("44.00");

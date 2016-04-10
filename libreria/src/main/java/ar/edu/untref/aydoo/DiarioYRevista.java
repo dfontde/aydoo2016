@@ -18,6 +18,4 @@ public class DiarioYRevista extends Producto{
 		this.periodicidad = periodicidad;
 	}
 	
-	
-
 }

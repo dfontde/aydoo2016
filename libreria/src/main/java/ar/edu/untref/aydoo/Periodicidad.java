@@ -5,6 +5,6 @@ public enum Periodicidad {
 	DIARIA,
 	SEMANAL,
 	QUINCENAL,
-	MENSUAL
-
+	MENSUAL 
+		
 }
