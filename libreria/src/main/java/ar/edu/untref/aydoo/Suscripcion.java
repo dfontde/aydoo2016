@@ -25,25 +25,9 @@ public class Suscripcion extends Producto{
 		}
 		BigDecimal precioConDescuento = super.getPrecio().subtract(descuento);
 		BigDecimal cantidadDeNumeros; 
-		
-    	switch (this.productoSuscripto.getPeriodicidad()) {
-        case DIARIA:
-        	cantidadDeNumeros= new BigDecimal("30");
-        	precioSuscripcion = precioConDescuento.multiply(cantidadDeNumeros);
-        	break;
-    	case SEMANAL:
-        	cantidadDeNumeros= new BigDecimal("4");
-        	precioSuscripcion = precioConDescuento.multiply(cantidadDeNumeros);    		
-        	break;
-        case QUINCENAL:
-        	cantidadDeNumeros= new BigDecimal("2");
-        	precioSuscripcion = precioConDescuento.multiply(cantidadDeNumeros);
-        	break;
-        case MENSUAL:
-        	cantidadDeNumeros= new BigDecimal("1");
-        	precioSuscripcion = precioConDescuento.multiply(cantidadDeNumeros);
-        	break;
-        }
+		       
+    	cantidadDeNumeros= new BigDecimal(this.productoSuscripto.getPeriodicidad().getCantidadDeNumerosAlMes());
+    	precioSuscripcion = precioConDescuento.multiply(cantidadDeNumeros);
 		
 		return precioSuscripcion;
 	}
