@@ -7,10 +7,10 @@ public class ArticuloDeLibreria extends Producto{
 	private BigDecimal porcentajeIVA = new BigDecimal("21.00");
 	private BigDecimal iva;
 	
-	public ArticuloDeLibreria(String descripcion, BigDecimal precio){
-		super(descripcion, precio);
+	public ArticuloDeLibreria(String descripcion, BigDecimal precioSinIVA){
+		super(descripcion, precioSinIVA);
 		BigDecimal cien = new BigDecimal("100.00");
-		this.iva = (precio.multiply(porcentajeIVA)).divide(cien);
+		this.iva = (precioSinIVA.multiply(porcentajeIVA)).divide(cien);
 	}
 	
 	@Override
