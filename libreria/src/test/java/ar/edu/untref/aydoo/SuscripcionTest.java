@@ -23,4 +23,21 @@ public class SuscripcionTest {
 		
 	}
 
+	@Test
+	public void tipoDeSuscripcionMensualNoObtieneDescuento(){
+		
+		DiarioYRevista diarioClarin = new DiarioYRevista("Diario Clarin", new java.math.BigDecimal("12.00"),
+														Periodicidad.DIARIA);
+		Producto suscripcionMensualADiarioClarin = new Suscripcion("Suscripcion mensual a Diario Clarin", 
+																	new java.math.BigDecimal("12.00"), 
+																	diarioClarin, TipoSuscripcion.MENSUAL);
+		BigDecimal precioSuscripcionEsperado = new BigDecimal("360.00");
+		
+		BigDecimal precioSuscripcionObtenido = suscripcionMensualADiarioClarin.getPrecio();
+		
+		Assert.assertEquals(precioSuscripcionEsperado, precioSuscripcionObtenido);
+		
+	}
+
+
 }

@@ -20,7 +20,7 @@ public class Suscripcion extends Producto{
 		final BigDecimal cien = new BigDecimal("100.00");
 		BigDecimal precioSuscripcion = new BigDecimal("0.00");
 		BigDecimal descuento = new BigDecimal("0.00");
-		if (this.tipoSuscripcion.equals(tipoSuscripcion)){
+		if (this.tipoSuscripcion.equals(TipoSuscripcion.ANUAL)){
 			descuento = super.getPrecio().multiply(porcentajeDescuento).divide(cien);
 		}
 		BigDecimal precioConDescuento = super.getPrecio().subtract(descuento);
