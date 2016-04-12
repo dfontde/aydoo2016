@@ -22,15 +22,13 @@ public class Libreria {
 		Cliente clienteAComparar;
 		Mes mesAComparar;
 		
-		boolean encontrada = false;
 		Iterator<Compra> itCompras = compras.iterator();
-		while(itCompras.hasNext() && !encontrada){
+		while(itCompras.hasNext()){
 			compraAComparar = itCompras.next();
 			clienteAComparar = compraAComparar.getCliente();
 			mesAComparar = compraAComparar.getMes();
 			if (clienteAComparar.equals(cliente) && mesAComparar.equals(mes)){
-				montoACobrar = calcularMontoDeCompra(compraAComparar.getProductos());
-				encontrada = true;
+				montoACobrar = montoACobrar.add(calcularMontoDeCompra(compraAComparar.getProductos()));
 			}
 		}
 		
