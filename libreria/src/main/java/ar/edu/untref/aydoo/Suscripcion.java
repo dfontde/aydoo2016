@@ -8,8 +8,8 @@ public class Suscripcion extends Producto{
 	private TipoSuscripcion tipoSuscripcion;
 	private static final BigDecimal porcentajeDescuento = new BigDecimal("20.00");
 	
-	public Suscripcion(String descripcion, BigDecimal precioUnitario, DiarioYRevista productoSuscripto, TipoSuscripcion tipoSuscripcion){
-		super(descripcion, precioUnitario);
+	public Suscripcion(String descripcion, BigDecimal precioUnitarioProductoSuscripto, DiarioYRevista productoSuscripto, TipoSuscripcion tipoSuscripcion){
+		super(descripcion, precioUnitarioProductoSuscripto);
 		this.productoSuscripto = productoSuscripto;
 		this.tipoSuscripcion = tipoSuscripcion;
 	}
