@@ -11,7 +11,7 @@ public class DiarioYRevistaTest {
 	public void elPrecioDevueltoDeUnDiarioYRevistaNoIncluyeIVA() {
 		
 		BigDecimal precioSinIVA = new BigDecimal("15.00");
-		Producto diarioPagina12 = new DiarioYRevista("Pagina 12", precioSinIVA);
+		Producto diarioPagina12 = new DiarioYRevista("Pagina 12", precioSinIVA, Periodicidad.DIARIA);
 		
 		BigDecimal precioSinIVAObtenido = diarioPagina12.getPrecio();
 		

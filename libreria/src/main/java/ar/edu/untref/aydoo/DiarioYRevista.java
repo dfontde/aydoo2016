@@ -6,8 +6,9 @@ public class DiarioYRevista extends Producto{
 	
 	private Periodicidad periodicidad;
 	
-	public DiarioYRevista(String descripcion, BigDecimal precio) {
+	public DiarioYRevista(String descripcion, BigDecimal precio, Periodicidad periodicidad) {
 		super(descripcion, precio);
+		this.periodicidad = periodicidad;
 	}
 
 	public Periodicidad getPeriodicidad() {

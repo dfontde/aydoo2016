@@ -19,7 +19,7 @@ public class IntegracionTest {
 		compra.agregarProducto(articuloDeLibreriaLapicera1);
 		Producto articuloDeLibreriaLapicera2 = new ArticuloDeLibreria("Lapicera", new java.math.BigDecimal("5.00")); 
 		compra.agregarProducto(articuloDeLibreriaLapicera2);
-		Producto revistaElGrafico = new DiarioYRevista("El Grafico", new java.math.BigDecimal("30.00")); 
+		Producto revistaElGrafico = new DiarioYRevista("El Grafico", new java.math.BigDecimal("30.00"), Periodicidad.MENSUAL); 
 		compra.agregarProducto(revistaElGrafico);
 		BigDecimal montoACobrarEsperado = new java.math.BigDecimal("92.10");
 		libreria.agregarCompra(compra);
@@ -36,10 +36,9 @@ public class IntegracionTest {
 		Cliente cliente = new Cliente("Maria", "Suarez", "Patricios 1420");
 		Libreria libreria = new Libreria("Gamma");
 		Compra compra = new Compra(Mes.ENERO, cliente);
-		Producto diarioPagina12 = new DiarioYRevista("Pagina 12", new java.math.BigDecimal("12.00")); 
+		Producto diarioPagina12 = new DiarioYRevista("Pagina 12", new java.math.BigDecimal("12.00"), Periodicidad.DIARIA); 
 		compra.agregarProducto(diarioPagina12);
-		DiarioYRevista revistaBarcelona = new DiarioYRevista("Revista Barcelona", new java.math.BigDecimal("20.00"));
-		revistaBarcelona.setPeriodicidad(Periodicidad.QUINCENAL);
+		DiarioYRevista revistaBarcelona = new DiarioYRevista("Revista Barcelona", new java.math.BigDecimal("20.00"), Periodicidad.QUINCENAL);
 		Producto suscripcionAnualARevistaBarcelona = new Suscripcion("Suscripcion anual a Revista Barcelona", 
 																	new java.math.BigDecimal("20.00"), 
 																	revistaBarcelona, TipoSuscripcion.ANUAL);		
