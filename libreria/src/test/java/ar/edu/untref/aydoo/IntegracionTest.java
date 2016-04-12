@@ -55,6 +55,22 @@ public class IntegracionTest {
 	}
 	
 	@Test
+	public void calculoDeMontoACobrarEnUnMesConDosClientesConCompra(){
+		
+		Cliente clienteDiego = new Cliente("Diego", "Lopez", "Aristoteles 1829");
+		Cliente clienteLucas = new Cliente("Lucas", "Vazquez", "Sudamerica 1051");
+		Libreria libreria = new Libreria("Gamma");
+		libreria.agregarCompra(generarCompraEjemplo2Tarea(clienteDiego));
+		libreria.agregarCompra(generarCompraEnEnero(clienteLucas));
+		BigDecimal montoACobrarEsperado = new java.math.BigDecimal("44.00");
+		
+		BigDecimal montoACobrarObtenido = libreria.calcularMontoACobrar(Mes.ENERO, clienteDiego);
+		
+		Assert.assertEquals(montoACobrarEsperado, montoACobrarObtenido);
+		
+	}
+	
+	@Test
 	public void calcularMontoACobrarEjemplo1Tarea(){
 		
 		Libreria libreria = new Libreria("Gamma");
