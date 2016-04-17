@@ -12,18 +12,19 @@ public class Program{
     	if (args.length > 1) {
     		formatoImpresion = args[1]; 
     	}
-    	FactoresPrimos factoresPrimos = new FactoresPrimos();
-    	List<Integer> listaDeFactoresPrimos = factoresPrimos.descomponerEnFactoresPrimos(numeroAFactorizar);
+    	DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
+    	ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+    	List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
     		
     	switch (formatoImpresion.toUpperCase()) {
         case "":
-        	impresionConFormato = factoresPrimos.imprimirEnFormatoPretty(numeroAFactorizar, listaDeFactoresPrimos);
+        	impresionConFormato = impresorEnFormatos.imprimirEnFormatoPretty(numeroAFactorizar, listaDeFactoresPrimos);
         	break;
     	case "--FORMAT=PRETTY":
-        	impresionConFormato = factoresPrimos.imprimirEnFormatoPretty(numeroAFactorizar, listaDeFactoresPrimos);
+        	impresionConFormato = impresorEnFormatos.imprimirEnFormatoPretty(numeroAFactorizar, listaDeFactoresPrimos);
         	break;
         case "--FORMAT=QUIET":
-        	impresionConFormato = factoresPrimos.imprimirEnFormatoQuiet(listaDeFactoresPrimos);
+        	impresionConFormato = impresorEnFormatos.imprimirEnFormatoQuiet(listaDeFactoresPrimos);
         	break;
         default:
         	impresionConFormato = "Formato no aceptado. Las opciones posibles son: pretty o quiet.";

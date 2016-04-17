@@ -1,30 +1,11 @@
 package ar.edu.untref.aydoo;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class FactoresPrimos {
-
-	public List<Integer> descomponerEnFactoresPrimos(int numeroAFactorizar){
- 
-		List<Integer> listaDeFactoresPrimos = new ArrayList<Integer>();
-		
-		int factor = 2;
-		while (factor <= numeroAFactorizar){
-			if((numeroAFactorizar % factor) == 0){
-				listaDeFactoresPrimos.add(factor); 
-				numeroAFactorizar = numeroAFactorizar/factor;
-			}
-			else{
-				factor++;
-			}     
-			
-		}		
-		return listaDeFactoresPrimos;	
-	}
-
+public class ImpresorEnFormatos {
+	
 	public String imprimirEnFormatoPretty(int numeroAFactorizar, List<Integer> listaDeFactoresPrimos){
 		
 		String impresionFormatoPretty = "Factores primos "  + Integer.toString(numeroAFactorizar) + ": ";
@@ -48,8 +29,6 @@ public class FactoresPrimos {
 		}
 		
 		return impresionFormatoQuiet;
-	
 	}
-
 
 }
