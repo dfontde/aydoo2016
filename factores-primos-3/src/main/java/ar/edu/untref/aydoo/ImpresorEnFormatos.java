@@ -1,5 +1,6 @@
 package ar.edu.untref.aydoo;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -29,6 +30,19 @@ public class ImpresorEnFormatos {
 		}
 		
 		return impresionFormatoQuiet;
+	}
+
+	public String imprimirEnFormatoQuietAscendente(List<Integer> listaDeFactoresPrimos) {
+		
+		String impresionFormatoQuietAscendente = "";
+		
+		Collections.sort(listaDeFactoresPrimos);		
+		Iterator<Integer> itListaFactores = listaDeFactoresPrimos.iterator();
+		while(itListaFactores.hasNext()){
+			impresionFormatoQuietAscendente = impresionFormatoQuietAscendente + Integer.toString(itListaFactores.next()) + "\n";
+		}
+		
+		return impresionFormatoQuietAscendente;
 	}
 
 }

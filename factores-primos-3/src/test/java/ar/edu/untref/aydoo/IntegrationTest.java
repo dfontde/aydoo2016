@@ -75,4 +75,39 @@ public class IntegrationTest {
 		
 	}
 	
+	@Test 
+	public void imprimirEnFormatoQuietAscendenteConElNumero360() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 360;
+		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
+		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+		List<Integer> listaDeFactoresPrimosObtenida = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
+		String impresionEsperada = "2\n2\n2\n3\n3\n5\n";
+		
+		String impresionObtenida = impresorEnFormatos.imprimirEnFormatoQuietAscendente(listaDeFactoresPrimosObtenida);
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}
+	
+	@Test 
+	public void imprimirEnFormatoQuietAscendeteConElNumero90() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 90;
+		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
+		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+		List<Integer> listaDeFactoresPrimosObtenida = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
+		String impresionEsperada = "2\n3\n3\n5\n";
+		
+		String impresionObtenida = impresorEnFormatos.imprimirEnFormatoQuietAscendente(listaDeFactoresPrimosObtenida);
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}	
+
+
 }
