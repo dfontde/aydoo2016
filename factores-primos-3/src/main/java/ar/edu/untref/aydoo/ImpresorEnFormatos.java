@@ -1,48 +1,55 @@
 package ar.edu.untref.aydoo;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class ImpresorEnFormatos {
-	
-	public String imprimirEnFormatoPretty(int numeroAFactorizar, List<Integer> listaDeFactoresPrimos){
-		
-		String impresionFormatoPretty = "Factores primos "  + Integer.toString(numeroAFactorizar) + ": ";
-		
-		Iterator<Integer> itListaFactores = listaDeFactoresPrimos.iterator();
-		while(itListaFactores.hasNext()){
-			impresionFormatoPretty = impresionFormatoPretty + Integer.toString(itListaFactores.next()) + ' ';
-		}
-		
-		return impresionFormatoPretty;
-	}
 
-	public String imprimirEnFormatoQuiet(List<Integer> listaDeFactoresPrimos) {
+	public String imprimirEnFormatoQuietSegunSort(List<Integer> listaDeFactoresPrimos, String sort) {
 
-		String impresionFormatoQuiet = "";
-		
-		ListIterator<Integer> itListaFactores = listaDeFactoresPrimos.listIterator(listaDeFactoresPrimos.size());
-			
-		while (itListaFactores.hasPrevious()){
-				impresionFormatoQuiet = impresionFormatoQuiet + Integer.toString(itListaFactores.previous()) + "\n"; 
-		}
-		
-		return impresionFormatoQuiet;
-	}
-
-	public String imprimirEnFormatoQuietAscendente(List<Integer> listaDeFactoresPrimos) {
-		
 		String impresionFormatoQuietAscendente = "";
-		
-		Collections.sort(listaDeFactoresPrimos);		
+
+		ordenarLista(listaDeFactoresPrimos, sort);
 		Iterator<Integer> itListaFactores = listaDeFactoresPrimos.iterator();
-		while(itListaFactores.hasNext()){
+		while (itListaFactores.hasNext()) {
 			impresionFormatoQuietAscendente = impresionFormatoQuietAscendente + Integer.toString(itListaFactores.next()) + "\n";
 		}
-		
+
 		return impresionFormatoQuietAscendente;
+	}
+
+	 public String imprimirEnFormatoPrettySegunSort(int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sort){
+			
+		 String impresionFormatoPretty = "Factores primos " + Integer.toString(numeroAFactorizar) + ": ";
+	
+		 ordenarLista(listaDeFactoresPrimos, sort);
+		 Iterator<Integer> itListaFactores = listaDeFactoresPrimos.iterator();
+		 while(itListaFactores.hasNext()){
+			 impresionFormatoPretty = impresionFormatoPretty +
+			 Integer.toString(itListaFactores.next()) + ' ';
+		 }
+		
+		 return impresionFormatoPretty;
+	 }
+	
+	private List<Integer> ordenarLista(List<Integer> listaDeFactoresPrimos, String sort) {
+
+		switch (sort.toUpperCase()) {
+		case "ASC":
+			Collections.sort(listaDeFactoresPrimos);
+			break;
+		case "DES":
+			Comparator<Integer> comparador = Collections.reverseOrder();
+			Collections.sort(listaDeFactoresPrimos, comparador);
+			break;
+		default:
+			Collections.sort(listaDeFactoresPrimos);
+			break;
+		}
+
+		return listaDeFactoresPrimos;
 	}
 
 }
