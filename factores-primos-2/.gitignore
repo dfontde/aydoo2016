@@ -12,3 +12,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/dowload$
 hs_err_pid*
+/target/
+
+# archivos de configuracion de Eclipse
+/.settings/
+/.metadata/
+.classpath
+.project
+
