@@ -37,10 +37,10 @@ public class ImpresorEnFormatos {
 	private List<Integer> ordenarLista(List<Integer> listaDeFactoresPrimos, String sort) {
 
 		switch (sort.toUpperCase()) {
-		case "ASC":
+		case "--SORT:ASC":
 			Collections.sort(listaDeFactoresPrimos);
 			break;
-		case "DES":
+		case "--SORT:DES":
 			Comparator<Integer> comparador = Collections.reverseOrder();
 			Collections.sort(listaDeFactoresPrimos, comparador);
 			break;

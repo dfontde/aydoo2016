@@ -8,8 +8,8 @@ import org.junit.Test;
 
 public class ImpresorEnFormatosTest {
 
-	private final String sortASC = "ASC";
-	private final String sortDES = "DES";
+	private final String sortASC = "--SORT:ASC";
+	private final String sortDES = "--SORT:DES";
 
 	@Test 
 	public void imprimirEnFormatoQuietConElNumero360Ascendente() {

@@ -14,7 +14,7 @@ public class IntegrationTest {
 	public void persistirEnArchivoEnDirectorioDelProyectoEnFormatoQuietAscendenteConElNumero360() throws IOException {
 		
 		int numeroAFactorizar = 360;
-		String path = "salida.txt";
+		String path = "kilo.txt";
 		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
 		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
 		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);

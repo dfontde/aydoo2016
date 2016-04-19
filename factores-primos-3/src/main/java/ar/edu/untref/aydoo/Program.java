@@ -8,9 +8,11 @@ public class Program{
 	public static final void main(String[] args) throws IOException{
     	
 		int numeroAFactorizar = Integer.parseInt(args[0]);;
-		String formatoImpresion = args[1];
-    	String sortImpresion = args[2];
-    	String pathImpresion = args[3];
+		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		String formatoImpresion = administradorDeFuncionalidades.getFormat();
+		String sortImpresion = administradorDeFuncionalidades.getSort();
+    	String pathImpresion = administradorDeFuncionalidades.getOutput();
+    	
     	String impresionResultante = "";
         	
     	DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
@@ -18,7 +20,6 @@ public class Program{
     	FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(pathImpresion);
     	
     	List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
-    	sortImpresion = obtenerSort();
     	
     	switch (formatoImpresion.toUpperCase()) {
 	        case "":
@@ -37,12 +38,11 @@ public class Program{
     	
     	if (pathImpresion != ""){
     		factoresPrimosDAO.escribirFactorizacion(impresionResultante);
+    	}else{
+    		System.out.println(impresionResultante);
     	}
+    		
     	
-	}
-
-	private static String obtenerSort() {
-		return "ASC";
 	}
 
 }
