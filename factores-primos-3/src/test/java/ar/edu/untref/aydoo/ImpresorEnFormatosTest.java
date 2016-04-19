@@ -5,8 +5,8 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class IntegrationTest {
-	
+public class ImpresorEnFormatosTest {
+
 	private final String sortASC = "ASC";
 	private final String sortDES = "DES";
 
@@ -145,5 +145,5 @@ public class IntegrationTest {
 		Assert.assertTrue(estaBienImpreso);
 		
 	}	
-	
+
 }
