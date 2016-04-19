@@ -41,9 +41,9 @@ public class IntegrationTest {
     	}    	
 		
 		factoresPrimosDAO.escribirFactorizacion(impresionAPersistir);
-		String impresionLeida = factoresPrimosDAO.leerFactorizacion();
+		String impresionLeida = factoresPrimosDAO.leerFactorizacion() ;
 		
-		Assert.assertEquals(impresionAPersistir, impresionAPersistir);		
+		Assert.assertEquals(impresionAPersistir.trim(), impresionLeida.trim());		
 
 	}
 
