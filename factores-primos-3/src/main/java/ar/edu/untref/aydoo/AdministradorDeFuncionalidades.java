@@ -2,9 +2,9 @@ package ar.edu.untref.aydoo;
 
 public class AdministradorDeFuncionalidades {
 
-	private String format;
-	private String sort;
-	private String output;
+	private String format = "";
+	private String sort = "";
+	private String output = "";;
 	
 	public AdministradorDeFuncionalidades(String[] args) {
 		

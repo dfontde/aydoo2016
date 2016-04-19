@@ -70,15 +70,18 @@ public class AdministradorDeFuncionalidadesTest {
 		
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "--SORT:ASC";
+		String outputEsperado = "";
 		
 		String[] args = {"360", sortEsperado, formatoEsperado};
 		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
+		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
+		Assert.assertEquals(outputEsperado, outputObtenido);
 		
 	}
 

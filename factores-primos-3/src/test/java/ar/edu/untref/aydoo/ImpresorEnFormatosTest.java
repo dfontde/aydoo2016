@@ -11,6 +11,30 @@ public class ImpresorEnFormatosTest {
 	private final String sortASC = "--SORT:ASC";
 	private final String sortDES = "--SORT:DES";
 
+
+	@Test 
+	public void imprimirEnFormatoPrettyConElNumero360SinSort() {
+		
+		boolean estaBienImpreso;
+		int numeroAFactorizar = 360;
+		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+		List<Integer> listaDeFactoresPrimos = new ArrayList<Integer>();
+		listaDeFactoresPrimos.add(2);
+		listaDeFactoresPrimos.add(2);
+		listaDeFactoresPrimos.add(2);
+		listaDeFactoresPrimos.add(3);
+		listaDeFactoresPrimos.add(3);
+		listaDeFactoresPrimos.add(5);
+		String impresionEsperada = "Factores primos " + Integer.toString(numeroAFactorizar) + ": 2 2 2 3 3 5 ";
+		
+		String impresionObtenida = impresorEnFormatos.imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, "");
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}
+		
+	
 	@Test 
 	public void imprimirEnFormatoQuietConElNumero360Ascendente() {
 		
