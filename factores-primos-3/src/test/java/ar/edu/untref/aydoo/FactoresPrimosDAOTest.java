@@ -35,19 +35,19 @@ public class FactoresPrimosDAOTest {
 	
 	}
 	
-	@Test
-	public void persistirEnArchivoEnUnPathDefinido() throws IOException {
-		
-		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 \n";
-		String path = "/home/lucas/aydoo2016/factores-primos-3/archivosSalida/salida.txt";
-		
-		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);
-		factoresPrimosDAO.escribirFactorizacion(impresionEsperada);
-		
-		String impresionObtenida = factoresPrimosDAO.leerFactorizacion();
-		
-		Assert.assertEquals(impresionEsperada, impresionObtenida);
-	
-	}
+//	@Test
+//	public void persistirEnArchivoEnUnPathDefinido() throws IOException {
+//		
+//		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 \n";
+//		String path = "/home/lucas/aydoo2016/factores-primos-3/archivosSalidas/salida.txt";
+//		
+//		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);
+//		factoresPrimosDAO.escribirFactorizacion(impresionEsperada);
+//		
+//		String impresionObtenida = factoresPrimosDAO.leerFactorizacion();
+//		
+//		Assert.assertEquals(impresionEsperada, impresionObtenida);
+//	
+//	}
 
 }
