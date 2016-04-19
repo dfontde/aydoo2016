@@ -9,7 +9,6 @@ import org.junit.Test;
 public class IntegrationTest {
 
 	private final String sortASC = "ASC";
-	private final String sortDES = "DES";
 
 	@Test 
 	public void persistirEnArchivoEnDirectorioDelProyectoEnFormatoQuietAscendenteConElNumero360() throws IOException {
@@ -28,6 +27,5 @@ public class IntegrationTest {
 		Assert.assertEquals(impresionAPersistir, impresionLeida);		
 
 	}
-	
 
 }
