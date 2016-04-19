@@ -20,7 +20,6 @@ hs_err_pid*
 .classpath
 .project
 
-# archivos de texto de prueba y carpeta para guardarlos
+# archivos de texto de prueba
 salida.txt
-/archivosSalida/
 
