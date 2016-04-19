@@ -5,14 +5,14 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PersistidorEnArchivoTest {
+public class FactoresPrimosDAOTest {
 
 	@Test
 	public void persistirEnArchivoEnDirectorioDelProyecto() throws IOException {
 		
 		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 ";
 		String path = "salida.txt";
-		PersistidorEnArchivo persistidorEnArchivo = new PersistidorEnArchivo(path);
+		FactoresPrimosDAO persistidorEnArchivo = new FactoresPrimosDAO(path);
 		persistidorEnArchivo.escribirFactorizacion(impresionEsperada);
 		
 		String impresionObtenida = persistidorEnArchivo.leerFactorizacion();

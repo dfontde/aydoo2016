@@ -6,12 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class PersistidorEnArchivo {
+public class FactoresPrimosDAO {
 
 	private FileWriter archivoSalida;
 	private String path;
 	
-	public PersistidorEnArchivo(String path) throws IOException {
+	public FactoresPrimosDAO(String path) throws IOException {
 		archivoSalida = new FileWriter(path);
 		this.path = path;
 	}
