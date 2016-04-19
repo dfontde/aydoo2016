@@ -9,15 +9,15 @@ public class ImpresorEnFormatos {
 
 	public String imprimirEnFormatoQuietSegunSort(List<Integer> listaDeFactoresPrimos, String sort) {
 
-		String impresionFormatoQuietAscendente = "";
+		String impresionFormatoQuiet = "";
 
 		ordenarLista(listaDeFactoresPrimos, sort);
 		Iterator<Integer> itListaFactores = listaDeFactoresPrimos.iterator();
 		while (itListaFactores.hasNext()) {
-			impresionFormatoQuietAscendente = impresionFormatoQuietAscendente + Integer.toString(itListaFactores.next()) + "\n";
+			impresionFormatoQuiet = impresionFormatoQuiet + Integer.toString(itListaFactores.next()) + "\n";
 		}
 
-		return impresionFormatoQuietAscendente;
+		return impresionFormatoQuiet;
 	}
 
 	 public String imprimirEnFormatoPrettySegunSort(int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sort){
