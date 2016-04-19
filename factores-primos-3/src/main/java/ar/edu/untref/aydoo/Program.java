@@ -7,11 +7,12 @@ public class Program{
     
 	public static final void main(String[] args) throws IOException{
     	
-		int numeroAFactorizar = Integer.parseInt(args[0]);;
+		int posicionPathReal = 14;
+		int numeroAFactorizar = Integer.parseInt(args[0]);
 		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
 		String formatoImpresion = administradorDeFuncionalidades.getFormat();
 		String sortImpresion = administradorDeFuncionalidades.getSort();
-    	String pathImpresion = administradorDeFuncionalidades.getOutput();
+    	String pathImpresion = administradorDeFuncionalidades.getOutput().substring(posicionPathReal);;
     	
     	String impresionResultante = "";
         	
