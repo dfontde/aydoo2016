@@ -10,6 +10,7 @@ public class FactoresPrimosDAO {
 
 	private FileWriter archivoSalida;
 	private String path;
+	private Scanner scanner;
 	
 	public FactoresPrimosDAO(String path) throws IOException {
 		archivoSalida = new FileWriter(path);
@@ -25,10 +26,10 @@ public class FactoresPrimosDAO {
 		
 		String factorizacion = "";
 		File archivoSalidaParaLeer = new File(this.path);
-		Scanner scanner = new Scanner(archivoSalidaParaLeer);
+		scanner = new Scanner(archivoSalidaParaLeer);
 		
 		while (scanner.hasNextLine()) {
-			factorizacion = scanner.nextLine();
+			factorizacion = factorizacion + scanner.nextLine() + "\n";
 		}
 		
 		return factorizacion;

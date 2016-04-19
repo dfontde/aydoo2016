@@ -10,44 +10,44 @@ public class FactoresPrimosDAOTest {
 	@Test
 	public void persistirEnArchivoEnDirectorioDelProyecto() throws IOException {
 		
-		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 ";
+		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 \n";
 		String path = "salida.txt";
-		FactoresPrimosDAO persistidorEnArchivo = new FactoresPrimosDAO(path);
-		persistidorEnArchivo.escribirFactorizacion(impresionEsperada);
+		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);
+		factoresPrimosDAO.escribirFactorizacion(impresionEsperada);
 		
-		String impresionObtenida = persistidorEnArchivo.leerFactorizacion();
+		String impresionObtenida = factoresPrimosDAO.leerFactorizacion();
 		
 		Assert.assertEquals(impresionEsperada, impresionObtenida);
 	
 	}
 
-//	@Test
-//	public void persistirEnArchivoEnVariasLineasEnDirectorioDelProyecto() throws IOException {
-//		
-//		String impresionEsperada = "2\n2\n2\n3\n3\n5\n";
-//		String path = "salida.txt";
-//		PersistidorEnArchivo persistidorEnArchivo = new PersistidorEnArchivo(path);
-//		persistidorEnArchivo.escribirFactorizacion(impresionEsperada);
-//		
-//		String impresionObtenida = persistidorEnArchivo.leerFactorizacion();
-//		
-//		Assert.assertEquals(impresionEsperada, impresionObtenida);
-//	
-//	}
+	@Test
+	public void persistirEnArchivoEnVariasLineasEnDirectorioDelProyecto() throws IOException {
+		
+		String impresionEsperada = "2\n2\n2\n3\n3\n5 \n";
+		String path = "salida.txt";
+		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);
+		factoresPrimosDAO.escribirFactorizacion(impresionEsperada);
+		
+		String impresionObtenida = factoresPrimosDAO.leerFactorizacion();
+		
+		Assert.assertEquals(impresionEsperada, impresionObtenida);
 	
-//	@Test
-//	public void persistirEnArchivoEnUnPathDefinido() throws IOException {
-//		
-//		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 ";
-//		String path = "/home/lucas/aydoo2016/factores-primos-3/archivosSalida/salida.txt";
-//		
-//		PersistidorEnArchivo persistidorEnArchivo = new PersistidorEnArchivo(path);
-//		persistidorEnArchivo.escribirFactorizacion(impresionEsperada);
-//		
-//		String impresionObtenida = persistidorEnArchivo.leerFactorizacion();
-//		
-//		Assert.assertEquals(impresionEsperada, impresionObtenida);
-//	
-//	}
+	}
+	
+	@Test
+	public void persistirEnArchivoEnUnPathDefinido() throws IOException {
+		
+		String impresionEsperada = "Factores primos 90: 2 2 2 3 3 5 \n";
+		String path = "/home/lucas/aydoo2016/factores-primos-3/archivosSalida/salida.txt";
+		
+		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);
+		factoresPrimosDAO.escribirFactorizacion(impresionEsperada);
+		
+		String impresionObtenida = factoresPrimosDAO.leerFactorizacion();
+		
+		Assert.assertEquals(impresionEsperada, impresionObtenida);
+	
+	}
 
 }
