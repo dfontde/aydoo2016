@@ -8,18 +8,24 @@ import org.junit.Test;
 
 public class IntegrationTest {
 
-	private final String sortASC = "ASC";
-
 	@Test 
 	public void persistirEnArchivoEnDirectorioDelProyectoEnFormatoQuietAscendenteConElNumero360() throws IOException {
+
+		int numeroAFactorizar = 1024;
+		String formatoEsperado = "--FORMAT=PRETTY";
+		String sortEsperado = "--SORT:ASC";
+		String outputEsperado = "--OUTPUT-FILE:salida.txt";
+		String[] args = {"1024", formatoEsperado, sortEsperado, outputEsperado};
+		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);		
+		String sortObtenido = administradorDeFuncionalidades.getSort();
+		String outputObtenido = administradorDeFuncionalidades.getOutput();
+		String path = outputObtenido.substring(14);
 		
-		int numeroAFactorizar = 360;
-		String path = "kilo.txt";
 		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
 		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
 		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(path);
 		List<Integer> listaDeFactoresPrimosObtenida = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
-		String impresionAPersistir = impresorEnFormatos.imprimirEnFormatoQuietSegunSort(listaDeFactoresPrimosObtenida, sortASC);
+		String impresionAPersistir = impresorEnFormatos.imprimirEnFormatoQuietSegunSort(listaDeFactoresPrimosObtenida, sortObtenido);
 				
 		factoresPrimosDAO.escribirFactorizacion(impresionAPersistir);
 		String impresionLeida = factoresPrimosDAO.leerFactorizacion();

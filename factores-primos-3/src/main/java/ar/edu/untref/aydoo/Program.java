@@ -36,7 +36,7 @@ public class Program{
 	    		break;
         }    	
     	
-    	if (pathImpresion != ""){
+    	if (pathImpresion != null){
     		factoresPrimosDAO.escribirFactorizacion(impresionResultante);
     	}else{
     		System.out.println(impresionResultante);
