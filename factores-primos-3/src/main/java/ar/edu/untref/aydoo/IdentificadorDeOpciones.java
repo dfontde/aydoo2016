@@ -5,7 +5,7 @@ public class IdentificadorDeOpciones {
 	private String numeroAFactorizar = "";
 	private String format = "";
 	private String sort = "";
-	private String output = "";;
+	private String output = "";
 	
 	public IdentificadorDeOpciones(String[] args) {
 		
