@@ -37,34 +37,18 @@ public class Program{
 	
 	private static void getParametrosAplicacion(String[] args) {
 	
-		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
+		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
 		numeroAFactorizar = Integer.parseInt(args[0]);		
-		formatoImpresion = administradorDeFuncionalidades.getFormat();
-		sortImpresion = administradorDeFuncionalidades.getSort();
-		pathImpresion = administradorDeFuncionalidades.getOutput();
+		formatoImpresion = identificadorDeOpciones.getFormat();
+		sortImpresion = identificadorDeOpciones.getSort();
+		pathImpresion = identificadorDeOpciones.getOutput();
 		
 	}
 	
 	private static String getImpresionResultante(String formatoImpresion, int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sortImpresion) {
 
 		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
-		String impresionResultante = "";
-		
-		switch (formatoImpresion.toUpperCase()) {
-	        case "":
-	        	impresionResultante = impresorEnFormatos.imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
-	        	break;
-	    	case "--FORMAT=PRETTY":
-	    		impresionResultante = impresorEnFormatos.imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
-	        	break;
-	        case "--FORMAT=QUIET":
-	        	impresionResultante = impresorEnFormatos.imprimirEnFormatoQuietSegunSort(listaDeFactoresPrimos, sortImpresion);
-	        	break;
-	        default:
-	        	impresionResultante = "Formato no aceptado. Las opciones posibles son: pretty o quiet.";
-	    		break;
-        }    			
-	
+		String impresionResultante = impresorEnFormatos.getImpresionResultante(formatoImpresion, numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
 		return impresionResultante;
 		
 	}	
