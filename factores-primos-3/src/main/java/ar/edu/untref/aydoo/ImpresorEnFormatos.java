@@ -7,7 +7,31 @@ import java.util.List;
 
 public class ImpresorEnFormatos {
 
-	public String imprimirEnFormatoQuietSegunSort(List<Integer> listaDeFactoresPrimos, String sort) {
+
+	public String getImpresionResultante(String formatoImpresion, int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sortImpresion) {
+
+		String impresionResultante = "";
+		
+		switch (formatoImpresion.toUpperCase()) {
+	        case "":
+	        	impresionResultante = imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
+	        	break;
+	    	case "--FORMAT=PRETTY":
+	    		impresionResultante = imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
+	        	break;
+	        case "--FORMAT=QUIET":
+	        	impresionResultante = imprimirEnFormatoQuietSegunSort(listaDeFactoresPrimos, sortImpresion);
+	        	break;
+	        default:
+	        	impresionResultante = "Formato no aceptado. Las opciones posibles son: pretty o quiet.";
+	    		break;
+        }    			
+	
+		return impresionResultante;
+		
+	}
+	
+	private String imprimirEnFormatoQuietSegunSort(List<Integer> listaDeFactoresPrimos, String sort) {
 
 		String impresionFormatoQuiet = "";
 
@@ -20,7 +44,7 @@ public class ImpresorEnFormatos {
 		return impresionFormatoQuiet;
 	}
 
-	 public String imprimirEnFormatoPrettySegunSort(int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sort){
+	 private String imprimirEnFormatoPrettySegunSort(int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sort){
 			
 		 String impresionFormatoPretty = "Factores primos " + Integer.toString(numeroAFactorizar) + ": ";
 	
