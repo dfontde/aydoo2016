@@ -38,7 +38,7 @@ public class Program{
 	private static void getParametrosAplicacion(String[] args) {
 	
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(args[0]);		
+		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
 		formatoImpresion = identificadorDeOpciones.getFormat();
 		sortImpresion = identificadorDeOpciones.getSort();
 		pathImpresion = identificadorDeOpciones.getOutput();
