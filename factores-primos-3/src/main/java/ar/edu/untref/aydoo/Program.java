@@ -5,20 +5,52 @@ import java.util.List;
 
 public class Program{
     
+	private static int numeroAFactorizar;
+	private static String formatoImpresion;
+	private static String sortImpresion;
+	private static String pathImpresion;
+	
+	
 	public static final void main(String[] args) throws IOException {
 
-		String impresionResultante = "";
-		int numeroAFactorizar = Integer.parseInt(args[0]);
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
-		String formatoImpresion = administradorDeFuncionalidades.getFormat();
-		String sortImpresion = administradorDeFuncionalidades.getSort();
-		String pathImpresion = administradorDeFuncionalidades.getOutput();
+		getParametrosAplicacion(args);
 
-    	DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
-    	List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
+		List<Integer> listaDeFactoresPrimos = getListaDeFactoresPrimos(numeroAFactorizar);
     	
-    	ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
-    	switch (formatoImpresion.toUpperCase()) {
+    	String impresionResultante = getImpresionResultante(formatoImpresion, numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
+
+    	if (pathImpresion == ""){
+    		System.out.println(impresionResultante);
+    	}else{
+    		persistirEnArchivo(pathImpresion, impresionResultante);
+    	}
+    	
+	}
+	
+	private static List<Integer> getListaDeFactoresPrimos(int numeroAFactorizar) {
+    	
+		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
+    	List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
+    	return listaDeFactoresPrimos;
+	
+	}
+	
+	private static void getParametrosAplicacion(String[] args) {
+	
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
+		numeroAFactorizar = Integer.parseInt(args[0]);		
+		formatoImpresion = administradorDeFuncionalidades.getFormat();
+		sortImpresion = administradorDeFuncionalidades.getSort();
+		pathImpresion = administradorDeFuncionalidades.getOutput();
+		
+	}
+	
+	private static String getImpresionResultante(String formatoImpresion, int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sortImpresion) {
+
+		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+		String impresionResultante = "";
+		
+		switch (formatoImpresion.toUpperCase()) {
 	        case "":
 	        	impresionResultante = impresorEnFormatos.imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
 	        	break;
@@ -31,21 +63,19 @@ public class Program{
 	        default:
 	        	impresionResultante = "Formato no aceptado. Las opciones posibles son: pretty o quiet.";
 	    		break;
-        }    	
-    	
-    	if (pathImpresion == ""){
-    		System.out.println(impresionResultante);
-    	}else{
-    		persistirEnArchivo(pathImpresion, impresionResultante);
-    	}
-    	
-	}
+        }    			
+	
+		return impresionResultante;
+		
+	}	
 	
 	private static void persistirEnArchivo(String pathImpresion, String impresionAPersistir) throws IOException {
+
 		int posicionPathReal = 14;
 		String pathReal = pathImpresion.substring(posicionPathReal);
 		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(pathReal);	
 		factoresPrimosDAO.escribirFactorizacion(impresionAPersistir);		
+	
 	}
 
 
