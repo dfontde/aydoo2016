@@ -8,17 +8,20 @@ public class IdentificadorDeOpcionesTest {
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentos() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "--SORT:ASC";
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
-		String[] args = {"360", formatoEsperado, sortEsperado, outputEsperado};
+		String[] args = {numeroAFactorizarEsperado, formatoEsperado, sortEsperado, outputEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);

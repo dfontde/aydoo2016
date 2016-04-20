@@ -2,6 +2,7 @@ package ar.edu.untref.aydoo;
 
 public class IdentificadorDeOpciones {
 
+	private String numeroAFactorizar = "";
 	private String format = "";
 	private String sort = "";
 	private String output = "";;
@@ -9,6 +10,9 @@ public class IdentificadorDeOpciones {
 	public IdentificadorDeOpciones(String[] args) {
 		
 		String parametroAEvaluar;
+		
+		this.numeroAFactorizar = args[0];
+		
 		for (int i = 1; i < args.length; i++){
 			parametroAEvaluar = args[i].substring(0, 3).toUpperCase();
 			switch (parametroAEvaluar) {
@@ -26,6 +30,10 @@ public class IdentificadorDeOpciones {
 		
 	}
 
+	public String getNumeroAFactorizar() {
+		return numeroAFactorizar;
+	}
+	
 	public String getFormat() {
 		return format;
 	}
