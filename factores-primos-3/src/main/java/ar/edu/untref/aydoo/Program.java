@@ -15,16 +15,20 @@ public class Program{
 
 		getParametrosAplicacion(args);
 
-		List<Integer> listaDeFactoresPrimos = getListaDeFactoresPrimos(numeroAFactorizar);
-    	
-    	String impresionResultante = getImpresionResultante(formatoImpresion, numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
-
-    	if (pathImpresion == ""){
-    		System.out.println(impresionResultante);
-    	}else{
-    		persistirEnArchivo(pathImpresion, impresionResultante);
-    	}
-    	
+		if (numeroAFactorizar != 0){ 
+			
+			List<Integer> listaDeFactoresPrimos = getListaDeFactoresPrimos(numeroAFactorizar);
+	    	String impresionResultante = getImpresionResultante(formatoImpresion, numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);	
+	    	
+	    	if (pathImpresion == ""){
+	    		System.out.println(impresionResultante);
+	    	}else{
+	    		persistirEnArchivo(pathImpresion, impresionResultante);
+	    	}	
+		
+		}else{
+			System.out.println("Debe indicar al menos un numero.");
+		}
 	}
 	
 	private static List<Integer> getListaDeFactoresPrimos(int numeroAFactorizar) {
@@ -38,7 +42,7 @@ public class Program{
 	private static void getParametrosAplicacion(String[] args) {
 	
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		formatoImpresion = identificadorDeOpciones.getFormat();
 		sortImpresion = identificadorDeOpciones.getSort();
 		pathImpresion = identificadorDeOpciones.getOutput();

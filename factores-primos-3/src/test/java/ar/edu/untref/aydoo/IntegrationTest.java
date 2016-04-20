@@ -7,14 +7,14 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class IntegrationTest {
-
+	
 	@Test 
 	public void soloConParametroNumeroImprimePorPantallaFormatoPrettyEnOrdenAscendente() {
 
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar)}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
 		List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
 		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
@@ -32,7 +32,7 @@ public class IntegrationTest {
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar), "--format=pretty"}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		String formatoImpresion = identificadorDeOpciones.getFormat();
 		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
 		List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
@@ -51,7 +51,7 @@ public class IntegrationTest {
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar), "--format=pretty", "--sort:asc"}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();
 		String formatoImpresion = identificadorDeOpciones.getFormat();
 		String sort = identificadorDeOpciones.getSort();
 		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
@@ -71,7 +71,7 @@ public class IntegrationTest {
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar), "--format=pretty", "--sort:des"}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		String formatoImpresion = identificadorDeOpciones.getFormat();
 		String sort = identificadorDeOpciones.getSort();
 		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
@@ -92,7 +92,7 @@ public class IntegrationTest {
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar), "--format=pretty", "--sort:des", "--output-file:salida.txt"}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		String formatoImpresion = identificadorDeOpciones.getFormat();
 		String sort = identificadorDeOpciones.getSort();
 		String output = identificadorDeOpciones.getOutput();
@@ -118,7 +118,7 @@ public class IntegrationTest {
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar), "--format=pretty", "--output-file:salida.txt"}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		String formatoImpresion = identificadorDeOpciones.getFormat();
 		String sort = identificadorDeOpciones.getSort();
 		String output = identificadorDeOpciones.getOutput();
@@ -144,7 +144,7 @@ public class IntegrationTest {
 		int numeroAFactorizar = 360;
 		String [] args = {Integer.toString(numeroAFactorizar), "--output-file:salida.txt"}; 
 		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
-		numeroAFactorizar = Integer.parseInt(identificadorDeOpciones.getNumeroAFactorizar());		
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
 		String formatoImpresion = identificadorDeOpciones.getFormat();
 		String sort = identificadorDeOpciones.getSort();
 		String output = identificadorDeOpciones.getOutput();
