@@ -33,7 +33,27 @@ public class ImpresorEnFormatosTest {
 		Assert.assertTrue(estaBienImpreso);
 		
 	}
+
+	@Test 
+	public void imprimirEnFormatoQuietConElNumero360SinSort() {
 		
+		boolean estaBienImpreso;
+		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+		List<Integer> listaDeFactoresPrimos = new ArrayList<Integer>();
+		listaDeFactoresPrimos.add(2);
+		listaDeFactoresPrimos.add(2);
+		listaDeFactoresPrimos.add(2);
+		listaDeFactoresPrimos.add(3);
+		listaDeFactoresPrimos.add(3);
+		listaDeFactoresPrimos.add(5);
+		String impresionEsperada = "2\n2\n2\n3\n3\n5\n";
+		
+		String impresionObtenida = impresorEnFormatos.imprimirEnFormatoQuietSegunSort(listaDeFactoresPrimos, "");
+		estaBienImpreso = impresionObtenida.equals(impresionEsperada);
+		
+		Assert.assertTrue(estaBienImpreso);
+		
+	}	
 	
 	@Test 
 	public void imprimirEnFormatoQuietConElNumero360Ascendente() {
