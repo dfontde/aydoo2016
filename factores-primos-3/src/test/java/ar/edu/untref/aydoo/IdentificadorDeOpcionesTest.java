@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AdministradorDeFuncionalidadesTest {
+public class IdentificadorDeOpcionesTest {
 
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentos() {
@@ -13,7 +13,7 @@ public class AdministradorDeFuncionalidadesTest {
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", formatoEsperado, sortEsperado, outputEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
@@ -33,7 +33,7 @@ public class AdministradorDeFuncionalidadesTest {
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", sortEsperado, outputEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
@@ -53,7 +53,7 @@ public class AdministradorDeFuncionalidadesTest {
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", outputEsperado, sortEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
@@ -73,7 +73,7 @@ public class AdministradorDeFuncionalidadesTest {
 		String outputEsperado = "";
 		
 		String[] args = {"360", sortEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
@@ -93,7 +93,7 @@ public class AdministradorDeFuncionalidadesTest {
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", outputEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
@@ -113,7 +113,7 @@ public class AdministradorDeFuncionalidadesTest {
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", outputEsperado, sortEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();

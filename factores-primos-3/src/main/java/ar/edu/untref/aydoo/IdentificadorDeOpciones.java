@@ -1,12 +1,12 @@
 package ar.edu.untref.aydoo;
 
-public class AdministradorDeFuncionalidades {
+public class IdentificadorDeOpciones {
 
 	private String format = "";
 	private String sort = "";
 	private String output = "";;
 	
-	public AdministradorDeFuncionalidades(String[] args) {
+	public IdentificadorDeOpciones(String[] args) {
 		
 		String parametroAEvaluar;
 		for (int i = 1; i < args.length; i++){
