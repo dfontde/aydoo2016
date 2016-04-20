@@ -16,7 +16,7 @@ public class IdentificadorDeOpcionesTest {
 		String[] args = {numeroAFactorizarEsperado, formatoEsperado, sortEsperado, outputEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
-		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
@@ -39,7 +39,7 @@ public class IdentificadorDeOpcionesTest {
 		String[] args = {numeroAFactorizarEsperado, sortEsperado, outputEsperado, formatoEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
-		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
@@ -62,7 +62,7 @@ public class IdentificadorDeOpcionesTest {
 		String[] args = {"360", outputEsperado, sortEsperado, formatoEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
-		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
@@ -85,7 +85,7 @@ public class IdentificadorDeOpcionesTest {
 		String[] args = {"360", sortEsperado, formatoEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
-		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
@@ -108,7 +108,7 @@ public class IdentificadorDeOpcionesTest {
 		String[] args = {"360", outputEsperado, formatoEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
-		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
@@ -131,7 +131,7 @@ public class IdentificadorDeOpcionesTest {
 		String[] args = {"360", outputEsperado, sortEsperado};
 		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
-		String numeroAFactorizarObtenido = administradorDeFuncionalidades.getNumeroAFactorizar();
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
