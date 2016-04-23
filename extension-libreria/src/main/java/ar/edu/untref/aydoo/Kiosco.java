@@ -28,8 +28,8 @@ public class Kiosco {
 		Iterator<Map.Entry<Compra, Cliente> > entries = comprasMensuales.entrySet().iterator();
 		while (entries.hasNext()) {
 			Map.Entry<Compra, Cliente> entry = entries.next();
-			if (entry.getValue().obtenerIdCliente() == clienteConDescuento.obtenerIdCliente()){
-				if (entry.getKey().obtenerProductoAComprar().tieneSuscripcionAnual() == true && entry.getKey().obtenerMes() == nuevoMes){
+			if (entry.getValue().obtenerIdCliente() == clienteConDescuento.obtenerIdCliente() && entry.getKey().obtenerMes() == nuevoMes){
+				if (entry.getKey().obtenerProductoAComprar().tieneSuscripcionAnual()){
 					double restoTotal;
 					restoTotal = entry.getKey().obtenerProductoAComprar().obtenerPrecioDelProducto();
 					sumarPrecio = ((entry.getKey().obtenerProductoAComprar().obtenerPrecioDelProducto()*20)/100);
