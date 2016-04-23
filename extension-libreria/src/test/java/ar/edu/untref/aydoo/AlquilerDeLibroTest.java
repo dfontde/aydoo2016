@@ -17,6 +17,30 @@ public class AlquilerDeLibroTest {
 		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
 	}
 
+	@Test
+	public void alquilarLibroPor2DiasDevuelve0() {
+		
+		int tiempoEnAlquiler = 2;
+		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.DIARIO, tiempoEnAlquiler);
+		double precioAlquilerEsperado = 0.0;
+		
+		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
+			
+		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
+	}
+
+	@Test
+	public void alquilarLibroPor26DiasDevuelve0() {
+		
+		int tiempoEnAlquiler = 26;
+		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.DIARIO, tiempoEnAlquiler);
+		double precioAlquilerEsperado = 0.0;
+		
+		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
+			
+		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
+	}
+
 
 }
 
