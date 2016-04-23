@@ -3,22 +3,25 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AdministradorDeFuncionalidadesTest {
+public class IdentificadorDeOpcionesTest {
 
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentos() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "--SORT:ASC";
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
-		String[] args = {"360", formatoEsperado, sortEsperado, outputEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		String[] args = {numeroAFactorizarEsperado, formatoEsperado, sortEsperado, outputEsperado};
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);
@@ -28,17 +31,20 @@ public class AdministradorDeFuncionalidadesTest {
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentosEnDistintoOrden1() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "--SORT:ASC";
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
-		String[] args = {"360", sortEsperado, outputEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		String[] args = {numeroAFactorizarEsperado, sortEsperado, outputEsperado, formatoEsperado};
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);
@@ -48,17 +54,20 @@ public class AdministradorDeFuncionalidadesTest {
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentosEnDistintoOrden2() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "--SORT:ASC";
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", outputEsperado, sortEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);
@@ -68,17 +77,20 @@ public class AdministradorDeFuncionalidadesTest {
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentosSinOutput() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "--SORT:ASC";
 		String outputEsperado = "";
 		
 		String[] args = {"360", sortEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);
@@ -88,17 +100,20 @@ public class AdministradorDeFuncionalidadesTest {
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentosSinSort() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "--FORMAT=PRETTY";
 		String sortEsperado = "";
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", outputEsperado, formatoEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);
@@ -108,17 +123,20 @@ public class AdministradorDeFuncionalidadesTest {
 	@Test
 	public void obtenerFuncionalidadesDesdeArrayDeArgumentosSinFormat() {
 		
+		String numeroAFactorizarEsperado = "360";
 		String formatoEsperado = "";
 		String sortEsperado = "--SORT:ASC";
 		String outputEsperado = "--OUTPUT-FILE:ARCHIVOSALIDA.TXT";
 		
 		String[] args = {"360", outputEsperado, sortEsperado};
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
+		IdentificadorDeOpciones administradorDeFuncionalidades = new IdentificadorDeOpciones(args);
 		
+		String numeroAFactorizarObtenido = Integer.toString(administradorDeFuncionalidades.getNumeroAFactorizar());
 		String formatObtenido = administradorDeFuncionalidades.getFormat();
 		String sortObtenido = administradorDeFuncionalidades.getSort();
 		String outputObtenido = administradorDeFuncionalidades.getOutput();
 		
+		Assert.assertEquals(numeroAFactorizarEsperado, numeroAFactorizarObtenido);
 		Assert.assertEquals(formatoEsperado, formatObtenido);
 		Assert.assertEquals(sortEsperado, sortObtenido);
 		Assert.assertEquals(outputEsperado, outputObtenido);

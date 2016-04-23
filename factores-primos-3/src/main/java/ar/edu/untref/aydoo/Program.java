@@ -5,47 +5,65 @@ import java.util.List;
 
 public class Program{
     
+	private static int numeroAFactorizar;
+	private static String formatoImpresion;
+	private static String sortImpresion;
+	private static String pathImpresion;
+	
+	
 	public static final void main(String[] args) throws IOException {
 
-		String impresionResultante = "";
-		int numeroAFactorizar = Integer.parseInt(args[0]);
-		AdministradorDeFuncionalidades administradorDeFuncionalidades = new AdministradorDeFuncionalidades(args);
-		String formatoImpresion = administradorDeFuncionalidades.getFormat();
-		String sortImpresion = administradorDeFuncionalidades.getSort();
-		String pathImpresion = administradorDeFuncionalidades.getOutput();
+		getParametrosAplicacion(args);
 
-    	DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
-    	List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
-    	
-    	ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
-    	switch (formatoImpresion.toUpperCase()) {
-	        case "":
-	        	impresionResultante = impresorEnFormatos.imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
-	        	break;
-	    	case "--FORMAT=PRETTY":
-	    		impresionResultante = impresorEnFormatos.imprimirEnFormatoPrettySegunSort(numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
-	        	break;
-	        case "--FORMAT=QUIET":
-	        	impresionResultante = impresorEnFormatos.imprimirEnFormatoQuietSegunSort(listaDeFactoresPrimos, sortImpresion);
-	        	break;
-	        default:
-	        	impresionResultante = "Formato no aceptado. Las opciones posibles son: pretty o quiet.";
-	    		break;
-        }    	
-    	
-    	if (pathImpresion == ""){
-    		System.out.println(impresionResultante);
-    	}else{
-    		persistirEnArchivo(pathImpresion, impresionResultante);
-    	}
-    	
+		if (numeroAFactorizar != 0){ 
+			
+			List<Integer> listaDeFactoresPrimos = getListaDeFactoresPrimos(numeroAFactorizar);
+	    	String impresionResultante = getImpresionResultante(formatoImpresion, numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);	
+	    	
+	    	if (pathImpresion == ""){
+	    		System.out.println(impresionResultante);
+	    	}else{
+	    		persistirEnArchivo(pathImpresion, impresionResultante);
+	    	}	
+		
+		}else{
+			System.out.println("Debe indicar al menos un numero.");
+		}
 	}
 	
+	private static List<Integer> getListaDeFactoresPrimos(int numeroAFactorizar) {
+    	
+		DescomponedorEnFactores descomponedorEnFactores = new DescomponedorEnFactores();
+    	List<Integer> listaDeFactoresPrimos = descomponedorEnFactores.descomponerEnFactoresPrimos(numeroAFactorizar);
+    	return listaDeFactoresPrimos;
+	
+	}
+	
+	private static void getParametrosAplicacion(String[] args) {
+	
+		IdentificadorDeOpciones identificadorDeOpciones = new IdentificadorDeOpciones(args);
+		numeroAFactorizar = identificadorDeOpciones.getNumeroAFactorizar();		
+		formatoImpresion = identificadorDeOpciones.getFormat();
+		sortImpresion = identificadorDeOpciones.getSort();
+		pathImpresion = identificadorDeOpciones.getOutput();
+		
+	}
+	
+	private static String getImpresionResultante(String formatoImpresion, int numeroAFactorizar, List<Integer> listaDeFactoresPrimos, String sortImpresion) {
+
+		ImpresorEnFormatos impresorEnFormatos = new ImpresorEnFormatos();
+		String impresionResultante = impresorEnFormatos.getImpresionResultante(formatoImpresion, numeroAFactorizar, listaDeFactoresPrimos, sortImpresion);
+		return impresionResultante;
+		
+	}	
+	
 	private static void persistirEnArchivo(String pathImpresion, String impresionAPersistir) throws IOException {
+
 		int posicionPathReal = 14;
 		String pathReal = pathImpresion.substring(posicionPathReal);
 		FactoresPrimosDAO factoresPrimosDAO = new FactoresPrimosDAO(pathReal);	
 		factoresPrimosDAO.escribirFactorizacion(impresionAPersistir);		
+	
 	}
 
 
