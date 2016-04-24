@@ -21,7 +21,7 @@ public class AlquilerLibro extends Producto {
 		    	precioDelProducto = calcularPrecioAlquilerDiario();
 		    	break;
 			case MENSUAL:
-				precioDelProducto = 0.0;
+				precioDelProducto = calcularPrecioAlquilerMensual();
 		    	break;
 		    case CUATRIMESTRAL:
 		    	precioDelProducto = 0.0;
@@ -50,5 +50,20 @@ public class AlquilerLibro extends Producto {
 
 	}
 
+	/**
+	 * pre: el tiempo de alquiler debe estar entre 1 y 3 meses.
+	 * post: precio de alquiler, devuelve 0 si no se cumple la precondicion.
+	 */
+	private double calcularPrecioAlquilerMensual() {
+		
+		double precioAlquiler = 0.0;
+	
+		if (tiempoEnAlquiler > 0 && tiempoEnAlquiler < 4) {
+			precioAlquiler = tipoAlquiler.getPrecioUnitario() * tiempoEnAlquiler;
+		}
+		
+		return precioAlquiler;
+	}
+	
 
 }
