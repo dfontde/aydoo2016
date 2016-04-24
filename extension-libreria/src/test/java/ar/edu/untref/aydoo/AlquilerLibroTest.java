@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AlquilerDeLibroTest {
+public class AlquilerLibroTest {
 
 	@Test
 	public void alquilarLibroPor7DiasCuesta70Pesos() {
@@ -81,7 +81,7 @@ public class AlquilerDeLibroTest {
 	public void alquilarLibroPor1CuatrimestreCuesta720Pesos() {
 		
 		int tiempoEnAlquiler = 1;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.CUATRIMESTRAL, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
 		double precioAlquilerEsperado = 720.0;
 		
 		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
@@ -93,7 +93,7 @@ public class AlquilerDeLibroTest {
 	public void alquilarLibroPor2CuatrimestreCuesta1440Pesos() {
 		
 		int tiempoEnAlquiler = 2;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.CUATRIMESTRAL, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
 		double precioAlquilerEsperado = 1440.0;
 		
 		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
@@ -105,7 +105,7 @@ public class AlquilerDeLibroTest {
 	public void alquilarLibroPor3CuatrimestreDevuelve0() {
 		
 		int tiempoEnAlquiler = 3;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.CUATRIMESTRAL, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
 		double precioAlquilerEsperado = 0.0;
 		
 		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();

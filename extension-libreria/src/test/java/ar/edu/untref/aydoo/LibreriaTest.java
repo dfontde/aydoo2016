@@ -204,7 +204,7 @@ public class LibreriaTest {
 		Periodico pagina12 = new Periodico("Pagina 12", 12.0, 1, false);
 		Revista parati = new Revista("Para TI", 30.0, 1, false);
 		int tiempoEnAlquiler = 2;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.CUATRIMESTRAL, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
 		
 		Map<Compra, Cliente> nuevasCompras = new HashMap<Compra, Cliente>();
 
