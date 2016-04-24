@@ -1,10 +1,10 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.Libro;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
 
 public class LibroTest {
 
@@ -21,7 +21,7 @@ public class LibroTest {
 	}
 
 	@Test
-	public void comprobarPrecioDelLibro(){
+	public void comprobarPrecioDelLibro() throws AlquilerLibroExcepcion{
 		Assert.assertEquals(50.0, nuevoLibro.obtenerPrecioDelProducto(),0);
 	}
 

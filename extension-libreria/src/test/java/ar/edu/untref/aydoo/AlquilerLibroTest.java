@@ -3,10 +3,13 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroDiarioException;
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
+
 public class AlquilerLibroTest {
 
 	@Test
-	public void alquilarLibroPor7DiasCuesta70Pesos() {
+	public void alquilarLibroPor7DiasCuesta70Pesos() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 7;
 		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
@@ -17,32 +20,28 @@ public class AlquilerLibroTest {
 		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
 	}
 
-	@Test
-	public void alquilarLibroPor2DiasDevuelve0() {
+	@Test(expected=AlquilerLibroDiarioException.class)
+	public void alquilarLibroPor2DiasLanzaExcepcion() throws AlquilerLibroExcepcion{
 		
 		int tiempoEnAlquiler = 2;
 		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
-		double precioAlquilerEsperado = 0.0;
-		
-		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
-			
-		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
+	
+		libroCrimenYCastigo.obtenerPrecioDelProducto();
+	
 	}
 
-	@Test
-	public void alquilarLibroPor26DiasDevuelve0() {
+	@Test(expected=AlquilerLibroDiarioException.class)
+	public void alquilarLibroPor26DiasDevuelve0() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 26;
 		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
-		double precioAlquilerEsperado = 0.0;
-		
-		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
-			
-		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
+
+		libroCrimenYCastigo.obtenerPrecioDelProducto();
+
 	}
 
 	@Test
-	public void alquilarLibroPor2MesesCuesta400Pesos() {
+	public void alquilarLibroPor2MesesCuesta400Pesos() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 2;
 		Producto libroCrimenYCastigo = new AlquilerLibroMensual(tiempoEnAlquiler);
@@ -54,7 +53,7 @@ public class AlquilerLibroTest {
 	}
 
 	@Test
-	public void alquilarLibroPor3MesesCuesta600Pesos() {
+	public void alquilarLibroPor3MesesCuesta600Pesos() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 3;
 		Producto libroCrimenYCastigo = new AlquilerLibroMensual(tiempoEnAlquiler);
@@ -66,7 +65,7 @@ public class AlquilerLibroTest {
 	}
 
 	@Test
-	public void alquilarLibroPor4MesesDevuelve0() {
+	public void alquilarLibroPor4MesesDevuelve0() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 4;
 		Producto libroCrimenYCastigo = new AlquilerLibroMensual(tiempoEnAlquiler);
@@ -78,7 +77,7 @@ public class AlquilerLibroTest {
 	}
 
 	@Test
-	public void alquilarLibroPor1CuatrimestreCuesta720Pesos() {
+	public void alquilarLibroPor1CuatrimestreCuesta720Pesos() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 1;
 		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
@@ -90,7 +89,7 @@ public class AlquilerLibroTest {
 	}
 
 	@Test
-	public void alquilarLibroPor2CuatrimestreCuesta1440Pesos() {
+	public void alquilarLibroPor2CuatrimestreCuesta1440Pesos() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 2;
 		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
@@ -102,7 +101,7 @@ public class AlquilerLibroTest {
 	}
 
 	@Test
-	public void alquilarLibroPor3CuatrimestreDevuelve0() {
+	public void alquilarLibroPor3CuatrimestreDevuelve0() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 3;
 		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);

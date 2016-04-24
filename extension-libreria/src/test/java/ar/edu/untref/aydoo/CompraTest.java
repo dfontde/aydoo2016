@@ -8,6 +8,7 @@ import org.junit.Test;
 import ar.edu.untref.aydoo.Compra;
 import ar.edu.untref.aydoo.Libro;
 import ar.edu.untref.aydoo.Meses;
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
 
 public class CompraTest {
 
@@ -15,7 +16,7 @@ public class CompraTest {
 	Libro nuevoLibro;
 
 	@Before
-	public void inicializar(){
+	public void inicializar() throws AlquilerLibroExcepcion{
 		nuevoLibro = new Libro("Recordando",50.0);
 		nuevaCompra = new Compra (Meses.Abril,nuevoLibro);
 	}

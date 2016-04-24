@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
+
 public class Kiosco {
 
 	private List <Double> listaDeProductosDeClientes;
@@ -17,13 +19,13 @@ public class Kiosco {
 		this.comprasMensuales = comprasMensuales;
 	}
 
-	public double calcularMontoACobrar(Meses nuevoMes, Cliente clienteNuevo){
+	public double calcularMontoACobrar(Meses nuevoMes, Cliente clienteNuevo) throws AlquilerLibroExcepcion{
 		aplicoDescuentoAClientes (nuevoMes,clienteNuevo,comprasMensuales);
 		double precioCliente = precioFinalDelCliente(listaDeProductosDeClientes);
 		return precioCliente;
 	}
 
-	private void aplicoDescuentoAClientes(Meses nuevoMes,Cliente clienteConDescuento, Map <Compra, Cliente> comprasMensuales){
+	private void aplicoDescuentoAClientes(Meses nuevoMes,Cliente clienteConDescuento, Map <Compra, Cliente> comprasMensuales) throws AlquilerLibroExcepcion {
 		listaDeProductosDeClientes = new LinkedList<Double>();
 		Iterator<Map.Entry<Compra, Cliente> > entries = comprasMensuales.entrySet().iterator();
 		while (entries.hasNext()) {

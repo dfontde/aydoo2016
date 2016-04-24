@@ -4,23 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
-
-import ar.edu.untref.aydoo.ArticuloLibreria;
-import ar.edu.untref.aydoo.Cliente;
-import ar.edu.untref.aydoo.Compra;
-import ar.edu.untref.aydoo.Kiosco;
-import ar.edu.untref.aydoo.Libro;
-import ar.edu.untref.aydoo.Meses;
-import ar.edu.untref.aydoo.Periodico;
-import ar.edu.untref.aydoo.Revista;
-
 import org.junit.Test;
+
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroDiarioException;
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
 
 
 public class LibreriaTest {
 
 	@Test
-	public void primerCompra(){
+	public void primerCompra() throws AlquilerLibroExcepcion{
 		Cliente Jose = new Cliente(1, "Jose Fernandez", "Avenida Siempre Viva 444");
 		Revista revistaElGrafico = new Revista("El Grafico", 30, 1, false);
 		Libro elHobbit = new Libro("El Hobbit", 50);
@@ -44,7 +37,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void compraConSuscripcionAnual(){
+	public void compraConSuscripcionAnual() throws AlquilerLibroExcepcion{
 		Cliente Maria = new Cliente(1, "Maria", "Direccion Sin Nombre 213");
 		Revista revistaBarcelona = new Revista("Barcelona", 20.0, 2, true);
 		Periodico pagina12 = new Periodico("Pagina 12", 12.0, 1, false);
@@ -64,7 +57,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void terceraCompra(){
+	public void terceraCompra() throws AlquilerLibroExcepcion{
 		Cliente JuanCarlos = new Cliente(1, "Juan Carlos", "Direccion Sin Nombre 213");
 		Cliente JosePablo = new Cliente (2, "Jose Pablo", "Nueva Direccion 600");
 		Revista genios = new Revista("Genios", 40.0, 1, false);
@@ -88,7 +81,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void compraDeLibrosSolamente(){
+	public void compraDeLibrosSolamente() throws AlquilerLibroExcepcion{
 		Cliente JuanCarlos = new Cliente(1, "Juan Carlos", "Direccion Sin Nombre 213");
 		Libro elSeniorDeLosAnillos = new Libro("El Senior de los Anillos", 200);
 		Libro elSeniorDeLosAnillos2 = new Libro("El Senior de los Anillos II", 230.5);
@@ -111,7 +104,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void compraEnArticulosDeLibreriaQueContienenIVA(){
+	public void compraEnArticulosDeLibreriaQueContienenIVA() throws AlquilerLibroExcepcion{
 		Cliente pabloLopez = new Cliente (1, "Pablo Lopez", "Avenida Corrientes 12345");
 
 		ArticuloLibreria LapiceraFaberCastell = new ArticuloLibreria ("Lapicera Faber Castell",25);
@@ -137,7 +130,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor7Dias(){
+	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor7Dias() throws AlquilerLibroExcepcion{
 	
 		Cliente Jose = new Cliente(1, "Jose Fernandez", "Avenida Siempre Viva 444");
 		Revista revistaElGrafico = new Revista("El Grafico", 30, 1, false);
@@ -169,7 +162,7 @@ public class LibreriaTest {
 	}
 	
 	@Test
-	public void compraConSuscripcionAnualExtendiendoConAlquilerDeLibroPor2Meses(){
+	public void compraConSuscripcionAnualExtendiendoConAlquilerDeLibroPor2Meses() throws AlquilerLibroExcepcion{
 		
 		Cliente Maria = new Cliente(1, "Maria", "Direccion Sin Nombre 213");
 		Revista revistaBarcelona = new Revista("Barcelona", 20.0, 2, true);
@@ -196,7 +189,7 @@ public class LibreriaTest {
 	}
 	
 	@Test
-	public void terceraCompraExtendiendoConAlquilerDeLibroPor2Cuatrimestres(){
+	public void terceraCompraExtendiendoConAlquilerDeLibroPor2Cuatrimestres() throws AlquilerLibroExcepcion{
 
 		Cliente JuanCarlos = new Cliente(1, "Juan Carlos", "Direccion Sin Nombre 213");
 		Cliente JosePablo = new Cliente (2, "Jose Pablo", "Nueva Direccion 600");
@@ -226,4 +219,34 @@ public class LibreriaTest {
 
 	}	
 
+	@Test(expected=AlquilerLibroDiarioException.class)
+	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor1DiaLanzaException() throws AlquilerLibroExcepcion{
+	
+		Cliente Jose = new Cliente(1, "Jose Fernandez", "Avenida Siempre Viva 444");
+		Revista revistaElGrafico = new Revista("El Grafico", 30, 1, false);
+		Libro elHobbit = new Libro("El Hobbit", 50);
+		ArticuloLibreria lapicera = new ArticuloLibreria("Lapicera", 5);
+		int tiempoEnAlquiler = 1;
+		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
+
+		Map<Compra, Cliente> nuevaCantidadDeCompras = new HashMap<Compra, Cliente>();
+
+		Compra nuevaCompra = new Compra(Meses.Agosto, elHobbit);
+		Compra nuevaCompra2 = new Compra(Meses.Agosto, lapicera);
+		Compra nuevaCompra3 = new Compra(Meses.Agosto, revistaElGrafico);
+		Compra nuevaCompra4 = new Compra(Meses.Agosto, lapicera);
+		Compra nuevaCompra5 = new Compra(Meses.Agosto, libroCrimenYCastigo);
+
+		nuevaCantidadDeCompras.put(nuevaCompra, Jose);
+		nuevaCantidadDeCompras.put(nuevaCompra2, Jose);
+		nuevaCantidadDeCompras.put(nuevaCompra3, Jose);
+		nuevaCantidadDeCompras.put(nuevaCompra4, Jose);
+		nuevaCantidadDeCompras.put(nuevaCompra5, Jose);
+		
+		Kiosco nuevoKiosco = new Kiosco(nuevaCantidadDeCompras);
+
+		nuevoKiosco.calcularMontoACobrar(Meses.Agosto, Jose);
+	
+	}	
+	
 }

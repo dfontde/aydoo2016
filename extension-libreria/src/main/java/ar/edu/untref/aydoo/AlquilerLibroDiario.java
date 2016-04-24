@@ -1,5 +1,7 @@
 package ar.edu.untref.aydoo;
 
+import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroDiarioException;
+
 public class AlquilerLibroDiario extends AlquilerLibro {
 
 	private final double precioAlquilerPorDia = 10.0;
@@ -10,16 +12,19 @@ public class AlquilerLibroDiario extends AlquilerLibro {
 	}
 
 	@Override
-	public double obtenerPrecioDelProducto (){
+	public double obtenerPrecioDelProducto() throws AlquilerLibroDiarioException{
 		
 		double precioAlquiler = 0.0;
-	
-		if (tiempoEnAlquiler > 2 && tiempoEnAlquiler < 26) {
-			precioAlquiler = tiempoEnAlquiler * precioAlquilerPorDia ;	
+		
+		if (tiempoEnAlquiler < 3 || tiempoEnAlquiler > 25) {
+			throw new AlquilerLibroDiarioException();
 		}
-	
+		
+		precioAlquiler = tiempoEnAlquiler * precioAlquilerPorDia ;	
+
 		return precioAlquiler;
 
 	}
 	
 }
+ 
