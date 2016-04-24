@@ -34,13 +34,15 @@ Acciones tomadas:
 - Nueva clase TipoAlquiler.
 - Sobreescritura del metodo obtenerPrecioDelProducto para que considere los alquileres.
 - Inclusion de nuevos test en la clase LibreriaTest que es una clase para test de integracion para corroborrar que todo funcione.
+4) Redisenio para que el codigo quede cerrado para modificar pero abierto para extender.
+- Creacion de las clases AlquilerLibroDiario, AlquilerLibroMensual, AlquilerLibroCuatrimestral que implementan la interfaz AlquilerLibro obligando a sobreescribir el metodo obtenerPrecioDelProducto.
 
-Conclusion: Buena, no tuve que tocar el codigo existente, solo extendi.
+CONCLUSION: Buena, no tuve que tocar el codigo existente, solo extendi. Ademas en el proceso me di cuenta de como hacer que mi extension permita a su vez dejar un codigo cerrado pero extendible.
 
 
 
 
-
+ 
 
 
 
