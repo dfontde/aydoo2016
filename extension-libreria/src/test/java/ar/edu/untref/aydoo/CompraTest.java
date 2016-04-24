@@ -8,7 +8,7 @@ import org.junit.Test;
 import ar.edu.untref.aydoo.Compra;
 import ar.edu.untref.aydoo.Libro;
 import ar.edu.untref.aydoo.Meses;
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
 
 public class CompraTest {
 

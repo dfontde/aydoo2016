@@ -3,9 +3,9 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroDiarioException;
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroMensualException;
+import ar.edu.untref.aydoo.exception.AlquilerLibroDiarioException;
+import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroMensualException;
 
 public class AlquilerLibroTest {
 

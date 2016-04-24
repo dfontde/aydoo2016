@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
 
 public class LibroTest {
 

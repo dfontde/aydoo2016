@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
 
 public abstract class Producto {
 

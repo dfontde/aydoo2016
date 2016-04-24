@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo.alquilerLibro;
+package ar.edu.untref.aydoo.exception;
 
 public class AlquilerLibroExcepcion extends Exception {
 

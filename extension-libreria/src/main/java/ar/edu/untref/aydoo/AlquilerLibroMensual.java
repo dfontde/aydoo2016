@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.alquilerLibro.AlquilerLibroMensualException;
+import ar.edu.untref.aydoo.exception.AlquilerLibroMensualException;
 
 public class AlquilerLibroMensual extends AlquilerLibro {
 
