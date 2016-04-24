@@ -144,7 +144,7 @@ public class LibreriaTest {
 		Libro elHobbit = new Libro("El Hobbit", 50);
 		ArticuloLibreria lapicera = new ArticuloLibreria("Lapicera", 5);
 		int tiempoEnAlquiler = 7;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.DIARIO, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
 
 		Map<Compra, Cliente> nuevaCantidadDeCompras = new HashMap<Compra, Cliente>();
 
