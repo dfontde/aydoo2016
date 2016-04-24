@@ -1,12 +1,12 @@
 package ar.edu.untref.aydoo;
 
-public class AlquilerLibro extends Producto {
-
-	private int tiempoEnAlquiler;
+public abstract class AlquilerLibro extends Producto {
 	
-	public AlquilerLibro(int tiempoEnAlquiler) {
+	public AlquilerLibro() {
 		super(0, false);
-		this.tiempoEnAlquiler = tiempoEnAlquiler;
 	}
+
+	@Override
+	public abstract double obtenerPrecioDelProducto ();
 		
 }

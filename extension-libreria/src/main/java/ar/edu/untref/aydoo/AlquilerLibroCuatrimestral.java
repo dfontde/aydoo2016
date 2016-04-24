@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-public class AlquilerLibroCuatrimestral extends Producto {
+public class AlquilerLibroCuatrimestral extends AlquilerLibro {
 
 	final double porcentajeDescuento = 10.0;
 	final double cien = 100.0;
@@ -9,7 +9,6 @@ public class AlquilerLibroCuatrimestral extends Producto {
 	private int tiempoEnAlquiler;
 	
 	public AlquilerLibroCuatrimestral(int tiempoEnAlquiler) {
-		super(0, false);
 		this.tiempoEnAlquiler = tiempoEnAlquiler;
 	}
 

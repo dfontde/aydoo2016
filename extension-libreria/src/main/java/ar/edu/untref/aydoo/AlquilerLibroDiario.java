@@ -1,12 +1,11 @@
 package ar.edu.untref.aydoo;
 
-public class AlquilerLibroDiario extends Producto{
+public class AlquilerLibroDiario extends AlquilerLibro {
 
 	private final double precioAlquilerPorDia = 10.0;
 	private int tiempoEnAlquiler;
 	
 	public AlquilerLibroDiario(int tiempoEnAlquiler) {
-		super(0, false);
 		this.tiempoEnAlquiler = tiempoEnAlquiler;
 	}
 
