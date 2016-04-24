@@ -17,9 +17,6 @@ public class AlquilerLibro extends Producto {
 		double precioDelProducto = 0.0;
 			
 		switch (tipoAlquiler) {	
-		    case DIARIO:
-		    	precioDelProducto = calcularPrecioAlquilerDiario();
-		    	break;
 			case MENSUAL:
 				precioDelProducto = calcularPrecioAlquilerMensual();
 		    	break;
@@ -32,22 +29,6 @@ public class AlquilerLibro extends Producto {
 		}  		
 		
 		return precioDelProducto;
-	}
-
-	/**
-	 * pre: el tiempo de alquiler debe estar entre los 3 y los 25 dias.
-	 * post: precio de alquiler, devuelve 0 si no se cumple la precondicion.
-	 */
-	private double calcularPrecioAlquilerDiario() {
-		
-		double precioAlquiler = 0.0;
-	
-		if (tiempoEnAlquiler > 2 && tiempoEnAlquiler < 26) {
-			precioAlquiler = tipoAlquiler.getPrecioUnitario() * tiempoEnAlquiler;
-		}
-		
-		return precioAlquiler;
-
 	}
 
 	/**

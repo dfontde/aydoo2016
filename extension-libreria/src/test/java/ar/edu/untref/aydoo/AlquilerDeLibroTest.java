@@ -9,7 +9,7 @@ public class AlquilerDeLibroTest {
 	public void alquilarLibroPor7DiasCuesta70Pesos() {
 		
 		int tiempoEnAlquiler = 7;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.DIARIO, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
 		double precioAlquilerEsperado = 70.0;
 		
 		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
@@ -21,7 +21,7 @@ public class AlquilerDeLibroTest {
 	public void alquilarLibroPor2DiasDevuelve0() {
 		
 		int tiempoEnAlquiler = 2;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.DIARIO, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
 		double precioAlquilerEsperado = 0.0;
 		
 		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
@@ -33,7 +33,7 @@ public class AlquilerDeLibroTest {
 	public void alquilarLibroPor26DiasDevuelve0() {
 		
 		int tiempoEnAlquiler = 26;
-		Producto libroCrimenYCastigo = new AlquilerLibro(TipoAlquiler.DIARIO, tiempoEnAlquiler);
+		Producto libroCrimenYCastigo = new AlquilerLibroDiario(tiempoEnAlquiler);
 		double precioAlquilerEsperado = 0.0;
 		
 		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
