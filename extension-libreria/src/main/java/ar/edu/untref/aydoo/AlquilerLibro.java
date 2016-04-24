@@ -72,9 +72,11 @@ public class AlquilerLibro extends Producto {
 	private double calcularPrecioAlquilerCuatrimestral() {
 		
 		double precioAlquiler = 0.0;
+		final double porcentajeDescuento = 10.0;
+		final double cien = 100.0;
 	
 		if (tiempoEnAlquiler > 0 && tiempoEnAlquiler < 3) {
-			precioAlquiler = (tipoAlquiler.getPrecioUnitario() - (tipoAlquiler.getPrecioUnitario() * 10 /100)) * tiempoEnAlquiler;
+			precioAlquiler = (tipoAlquiler.getPrecioUnitario() - (tipoAlquiler.getPrecioUnitario() * porcentajeDescuento /cien)) * tiempoEnAlquiler;
 		}
 		
 		return precioAlquiler;
