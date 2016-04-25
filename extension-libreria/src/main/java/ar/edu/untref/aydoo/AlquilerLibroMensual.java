@@ -5,6 +5,7 @@ import ar.edu.untref.aydoo.exception.AlquilerLibroMensualException;
 public class AlquilerLibroMensual extends AlquilerLibro {
 
 	private final double precioAlquilerPorMes = 200.0;
+	
 	private int tiempoEnAlquiler;
 	
 	public AlquilerLibroMensual(int tiempoEnAlquiler) {
