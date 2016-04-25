@@ -10,44 +10,46 @@ import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
 
 public class Kiosco {
 
-	private List <Double> listaDeProductosDeClientes;
-	private Map<Compra, Cliente> comprasMensuales = new HashMap <Compra, Cliente> ();
-	private double sumarPrecio=0;
+	private List<Double> listaDeProductosDeClientes;
+	private Map<Compra, Cliente> comprasMensuales = new HashMap<Compra, Cliente>();
+	private double sumarPrecio = 0;
 	private double precioTotal;
 
-	public Kiosco (Map <Compra, Cliente> comprasMensuales){
+	public Kiosco(Map<Compra, Cliente> comprasMensuales) {
 		this.comprasMensuales = comprasMensuales;
 	}
 
-	public double calcularMontoACobrar(Meses nuevoMes, Cliente clienteNuevo) throws AlquilerLibroExcepcion{
-		aplicoDescuentoAClientes (nuevoMes,clienteNuevo,comprasMensuales);
+	public double calcularMontoACobrar(Meses nuevoMes, Cliente clienteNuevo) throws AlquilerLibroExcepcion {
+		aplicoDescuentoAClientes(nuevoMes, clienteNuevo, comprasMensuales);
 		double precioCliente = precioFinalDelCliente(listaDeProductosDeClientes);
 		return precioCliente;
 	}
 
-	private void aplicoDescuentoAClientes(Meses nuevoMes,Cliente clienteConDescuento, Map <Compra, Cliente> comprasMensuales) throws AlquilerLibroExcepcion {
+	private void aplicoDescuentoAClientes(Meses nuevoMes, Cliente clienteConDescuento,
+			Map<Compra, Cliente> comprasMensuales) throws AlquilerLibroExcepcion {
 		listaDeProductosDeClientes = new LinkedList<Double>();
-		Iterator<Map.Entry<Compra, Cliente> > entries = comprasMensuales.entrySet().iterator();
+		Iterator<Map.Entry<Compra, Cliente>> entries = comprasMensuales.entrySet().iterator();
 		while (entries.hasNext()) {
 			Map.Entry<Compra, Cliente> entry = entries.next();
-			if (entry.getValue().obtenerIdCliente() == clienteConDescuento.obtenerIdCliente() && entry.getKey().obtenerMes() == nuevoMes){
-				if (entry.getKey().obtenerProductoAComprar().tieneSuscripcionAnual()){
+			if (entry.getValue().obtenerIdCliente() == clienteConDescuento.obtenerIdCliente()
+					&& entry.getKey().obtenerMes() == nuevoMes) {
+				if (entry.getKey().obtenerProductoAComprar().tieneSuscripcionAnual()) {
 					double restoTotal;
 					restoTotal = entry.getKey().obtenerProductoAComprar().obtenerPrecioDelProducto();
-					sumarPrecio = ((entry.getKey().obtenerProductoAComprar().obtenerPrecioDelProducto()*20)/100);
-					listaDeProductosDeClientes.add(restoTotal-sumarPrecio);
-				}else{
+					sumarPrecio = ((entry.getKey().obtenerProductoAComprar().obtenerPrecioDelProducto() * 20) / 100);
+					listaDeProductosDeClientes.add(restoTotal - sumarPrecio);
+				} else {
 					listaDeProductosDeClientes.add(entry.getKey().obtenerProductoAComprar().obtenerPrecioDelProducto());
 				}
 			}
 		}
 	}
 
-	private double precioFinalDelCliente (List <Double> nuevaListaAIterar){
+	private double precioFinalDelCliente(List<Double> nuevaListaAIterar) {
 		Iterator<Double> iterarPrecioDeCliente = nuevaListaAIterar.iterator();
 		Double sumarValores = 0.0;
-		precioTotal=0.0;
-		while(iterarPrecioDeCliente.hasNext()){
+		precioTotal = 0.0;
+		while (iterarPrecioDeCliente.hasNext()) {
 			sumarValores = iterarPrecioDeCliente.next();
 			precioTotal += sumarValores;
 		}
@@ -55,4 +57,3 @@ public class Kiosco {
 	}
 
 }
-
