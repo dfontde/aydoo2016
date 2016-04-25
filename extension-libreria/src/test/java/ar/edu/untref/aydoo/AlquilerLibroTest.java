@@ -3,6 +3,7 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
+import ar.edu.untref.aydoo.exception.AlquilerLibroCuatrimestralException;
 import ar.edu.untref.aydoo.exception.AlquilerLibroDiarioException;
 import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
 import ar.edu.untref.aydoo.exception.AlquilerLibroMensualException;
@@ -99,16 +100,14 @@ public class AlquilerLibroTest {
 		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
 	}
 
-	@Test
-	public void alquilarLibroPor3CuatrimestreDevuelve0() throws AlquilerLibroExcepcion {
+	@Test(expected=AlquilerLibroCuatrimestralException.class)
+	public void alquilarLibroPor3CuatrimestreLanzaExcepcion() throws AlquilerLibroExcepcion {
 		
 		int tiempoEnAlquiler = 3;
 		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
-		double precioAlquilerEsperado = 0.0;
 		
-		double precioAlquilerObtenido = libroCrimenYCastigo.obtenerPrecioDelProducto();
+		libroCrimenYCastigo.obtenerPrecioDelProducto();
 			
-		Assert.assertEquals(precioAlquilerEsperado, precioAlquilerObtenido,0);
 	}
 
 
