@@ -4,10 +4,10 @@ import ar.edu.untref.aydoo.exception.AlquilerLibroCuatrimestralException;
 
 public class AlquilerLibroCuatrimestral extends AlquilerLibro {
 
-	final double porcentajeDescuento = 10.0;
-	final double cien = 100.0;
-	
+	private final double porcentajeDescuento = 10.0;
+	private final double cien = 100.0;
 	private final double precioAlquilerPorCuatrimestre = 800.0;
+	
 	private int tiempoEnAlquiler;
 	
 	public AlquilerLibroCuatrimestral(int tiempoEnAlquiler) {
@@ -19,7 +19,7 @@ public class AlquilerLibroCuatrimestral extends AlquilerLibro {
 		
 		double precioAlquiler = 0.0;
 		
-		if (tiempoEnAlquiler < 0 || tiempoEnAlquiler >  2) {
+		if (tiempoEnAlquiler < 1 || tiempoEnAlquiler >  2) {
 			throw new AlquilerLibroCuatrimestralException();
 		}
 		
