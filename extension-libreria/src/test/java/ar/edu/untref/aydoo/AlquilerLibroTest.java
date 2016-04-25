@@ -110,6 +110,15 @@ public class AlquilerLibroTest {
 			
 	}
 
+	@Test(expected=AlquilerLibroCuatrimestralException.class)
+	public void alquilarLibroPor0CuatrimestreLanzaExcepcion() throws AlquilerLibroExcepcion {
+		
+		int tiempoEnAlquiler = 0;
+		Producto libroCrimenYCastigo = new AlquilerLibroCuatrimestral(tiempoEnAlquiler);
+		
+		libroCrimenYCastigo.obtenerPrecioDelProducto();
+			
+	}
 
 }
 
