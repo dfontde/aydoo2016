@@ -1,4 +1,4 @@
-Analisis de las cuestiones relevantes para la implementacion de la nueva funcionalidad:
+ANALISIS de las cuestiones relevantes para la implementacion de la nueva funcionalidad:
 
 Clases: Producto - Libro
 
@@ -25,7 +25,7 @@ Test:
 
 - En general escuetos, no testean casos de borde.
 
-Acciones tomadas:
+ACCIONES TOMADAS:
 
 1) Inclusion de archivo .gitignore.
 2) Correccion del metodo aplicoDescuentoAClientes, macheaba siempre por cliente pero por mes solo en el caso de ser una suscripcion anual.
@@ -34,10 +34,12 @@ Acciones tomadas:
 - Nueva clase TipoAlquiler.
 - Sobreescritura del metodo obtenerPrecioDelProducto para que considere los alquileres.
 - Inclusion de nuevos test en la clase LibreriaTest que es una clase para test de integracion para corroborrar que todo funcione.
-4) Redisenio para que el codigo quede cerrado para modificar pero abierto para extender.
+4) REDISENIO para que el codigo quede cerrado para modificar pero abierto para extender.
 - Creacion de las clases AlquilerLibroDiario, AlquilerLibroMensual, AlquilerLibroCuatrimestral que implementan la interfaz AlquilerLibro obligando a sobreescribir el metodo obtenerPrecioDelProducto.
+5) Creacion de clases de excepciones que heredan de Exception para manejar los rangos permitidos en los alquileres
+6) Inclusion de throws en las clases correspondientes.
 
-CONCLUSION: Buena, no tuve que tocar el codigo existente, solo extendi. Ademas en el proceso me di cuenta de como hacer que mi extension permita a su vez dejar un codigo cerrado pero extendible.
+CONCLUSIONES: Buena, no tuve que tocar el codigo existente (excepto los throws en las clases que correspondia), solo extendi. Ademas en el proceso me di cuenta de como hacer que mi extension permita a su vez dejar un codigo cerrado pero extendible.
 
 
 
