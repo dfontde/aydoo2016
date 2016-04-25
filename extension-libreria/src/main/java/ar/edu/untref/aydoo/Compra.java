@@ -7,11 +7,11 @@ public class Compra {
 	Meses nuevoMes;
 	Producto nuevoProductoAComprar;
 	Suscripcion nuevaSuscripcion;
-	
-	public Compra (Meses mesHechaLaCompra, Producto productoComprado) throws AlquilerLibroExcepcion{
+
+	public Compra(Meses mesHechaLaCompra, Producto productoComprado) throws AlquilerLibroExcepcion {
 		this.nuevoMes = mesHechaLaCompra;
 		this.nuevoProductoAComprar = productoComprado;
-		if(productoComprado.tieneSuscripcionAnual()){
+		if (productoComprado.tieneSuscripcionAnual()) {
 			this.nuevaSuscripcion = new Suscripcion(productoComprado);
 		}
 	}
@@ -19,12 +19,12 @@ public class Compra {
 	public Producto obtenerProductoAComprar() {
 		return nuevoProductoAComprar;
 	}
-	
+
 	public Meses obtenerMes() {
 		return nuevoMes;
 	}
-	
-	public Producto obtenerSuscripcion(){
+
+	public Producto obtenerSuscripcion() {
 		return this.nuevaSuscripcion.obtenerNuevoProducto();
 	}
 }
