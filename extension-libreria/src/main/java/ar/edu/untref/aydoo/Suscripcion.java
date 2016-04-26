@@ -1,12 +1,12 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public class Suscripcion extends Producto{
 
 	private Producto nuevoProducto;
 	
-	public Suscripcion (Producto nuevoProductoSuscripto) throws AlquilerLibroExcepcion {
+	public Suscripcion (Producto nuevoProductoSuscripto) throws AlquilerLibroException {
 		super(nuevoProductoSuscripto.obtenerPrecioDelProducto(),true);
 		this.nuevoProducto = nuevoProductoSuscripto;
 	}

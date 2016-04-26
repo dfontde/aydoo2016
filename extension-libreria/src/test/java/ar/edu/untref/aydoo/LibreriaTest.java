@@ -7,13 +7,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import ar.edu.untref.aydoo.exception.AlquilerLibroDiarioException;
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 
 public class LibreriaTest {
 
 	@Test
-	public void primerCompra() throws AlquilerLibroExcepcion{
+	public void primerCompra() throws AlquilerLibroException{
 		Cliente Jose = new Cliente(1, "Jose Fernandez", "Avenida Siempre Viva 444");
 		Revista revistaElGrafico = new Revista("El Grafico", 30, 1, false);
 		Libro elHobbit = new Libro("El Hobbit", 50);
@@ -37,7 +37,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void compraConSuscripcionAnual() throws AlquilerLibroExcepcion{
+	public void compraConSuscripcionAnual() throws AlquilerLibroException{
 		Cliente Maria = new Cliente(1, "Maria", "Direccion Sin Nombre 213");
 		Revista revistaBarcelona = new Revista("Barcelona", 20.0, 2, true);
 		Periodico pagina12 = new Periodico("Pagina 12", 12.0, 1, false);
@@ -57,7 +57,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void terceraCompra() throws AlquilerLibroExcepcion{
+	public void terceraCompra() throws AlquilerLibroException{
 		Cliente JuanCarlos = new Cliente(1, "Juan Carlos", "Direccion Sin Nombre 213");
 		Cliente JosePablo = new Cliente (2, "Jose Pablo", "Nueva Direccion 600");
 		Revista genios = new Revista("Genios", 40.0, 1, false);
@@ -81,7 +81,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void compraDeLibrosSolamente() throws AlquilerLibroExcepcion{
+	public void compraDeLibrosSolamente() throws AlquilerLibroException{
 		Cliente JuanCarlos = new Cliente(1, "Juan Carlos", "Direccion Sin Nombre 213");
 		Libro elSeniorDeLosAnillos = new Libro("El Senior de los Anillos", 200);
 		Libro elSeniorDeLosAnillos2 = new Libro("El Senior de los Anillos II", 230.5);
@@ -104,7 +104,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void compraEnArticulosDeLibreriaQueContienenIVA() throws AlquilerLibroExcepcion{
+	public void compraEnArticulosDeLibreriaQueContienenIVA() throws AlquilerLibroException{
 		Cliente pabloLopez = new Cliente (1, "Pablo Lopez", "Avenida Corrientes 12345");
 
 		ArticuloLibreria LapiceraFaberCastell = new ArticuloLibreria ("Lapicera Faber Castell",25);
@@ -130,7 +130,7 @@ public class LibreriaTest {
 	}
 
 	@Test
-	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor7Dias() throws AlquilerLibroExcepcion{
+	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor7Dias() throws AlquilerLibroException{
 	
 		Cliente Jose = new Cliente(1, "Jose Fernandez", "Avenida Siempre Viva 444");
 		Revista revistaElGrafico = new Revista("El Grafico", 30, 1, false);
@@ -162,7 +162,7 @@ public class LibreriaTest {
 	}
 	
 	@Test
-	public void compraConSuscripcionAnualExtendiendoConAlquilerDeLibroPor2Meses() throws AlquilerLibroExcepcion{
+	public void compraConSuscripcionAnualExtendiendoConAlquilerDeLibroPor2Meses() throws AlquilerLibroException{
 		
 		Cliente Maria = new Cliente(1, "Maria", "Direccion Sin Nombre 213");
 		Revista revistaBarcelona = new Revista("Barcelona", 20.0, 2, true);
@@ -189,7 +189,7 @@ public class LibreriaTest {
 	}
 	
 	@Test
-	public void terceraCompraExtendiendoConAlquilerDeLibroPor2Cuatrimestres() throws AlquilerLibroExcepcion{
+	public void terceraCompraExtendiendoConAlquilerDeLibroPor2Cuatrimestres() throws AlquilerLibroException{
 
 		Cliente JuanCarlos = new Cliente(1, "Juan Carlos", "Direccion Sin Nombre 213");
 		Cliente JosePablo = new Cliente (2, "Jose Pablo", "Nueva Direccion 600");
@@ -220,7 +220,7 @@ public class LibreriaTest {
 	}	
 
 	@Test(expected=AlquilerLibroDiarioException.class)
-	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor1DiaLanzaException() throws AlquilerLibroExcepcion{
+	public void primerCompraTareaExtendiendoConAlquilerDeLibroPor1DiaLanzaException() throws AlquilerLibroException{
 	
 		Cliente Jose = new Cliente(1, "Jose Fernandez", "Avenida Siempre Viva 444");
 		Revista revistaElGrafico = new Revista("El Grafico", 30, 1, false);

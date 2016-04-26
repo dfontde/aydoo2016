@@ -9,7 +9,7 @@ import ar.edu.untref.aydoo.Cliente;
 import ar.edu.untref.aydoo.Compra;
 import ar.edu.untref.aydoo.Meses;
 import ar.edu.untref.aydoo.Revista;
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public class SuscripcionTest {
 
@@ -18,7 +18,7 @@ public class SuscripcionTest {
 	Compra nuevaCompra;
 	
 	@Before
-	public void inicializar() throws AlquilerLibroExcepcion{
+	public void inicializar() throws AlquilerLibroException{
 		nuevoCliente = new Cliente (1,"Diego Armando Maradona", "Segurola y Habana");
 		nuevaRevistaASuscribir = new Revista("El Grafico", 30.2, 1, true);
 		nuevaCompra = new Compra (Meses.Enero,nuevaRevistaASuscribir);

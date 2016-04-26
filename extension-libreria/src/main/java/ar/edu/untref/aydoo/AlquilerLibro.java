@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public abstract class AlquilerLibro extends Producto {
 
@@ -9,6 +9,6 @@ public abstract class AlquilerLibro extends Producto {
 	}
 
 	@Override
-	public abstract double obtenerPrecioDelProducto() throws AlquilerLibroExcepcion;
+	public abstract double obtenerPrecioDelProducto() throws AlquilerLibroException;
 
 }

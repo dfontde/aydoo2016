@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ar.edu.untref.aydoo.ArticuloLibreria;
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public class ArticuloDeLibreriaTest {
 
@@ -17,7 +17,7 @@ public class ArticuloDeLibreriaTest {
 	}
 
 	@Test
-	public void obtenerPrecio() throws AlquilerLibroExcepcion{
+	public void obtenerPrecio() throws AlquilerLibroException{
 		double valor = 12.1;
 		//10*21/100=2.1 (IVA) + 10 (valor)
 		Assert.assertTrue(valor == fibron.obtenerPrecioDelProducto());

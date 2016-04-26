@@ -1,10 +1,10 @@
 package ar.edu.untref.aydoo.exception;
 
-public class AlquilerLibroExcepcion extends Exception {
+public class AlquilerLibroException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
-	public AlquilerLibroExcepcion(String mensaje) {
+	public AlquilerLibroException(String mensaje) {
 		super(mensaje);
 	}
 

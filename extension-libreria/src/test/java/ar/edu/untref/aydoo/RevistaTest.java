@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public class RevistaTest {
 
@@ -17,7 +17,7 @@ public class RevistaTest {
 	}
 	
 	@Test
-	public void compraMensualDeRevista() throws AlquilerLibroExcepcion{
+	public void compraMensualDeRevista() throws AlquilerLibroException{
 		Assert.assertTrue(100.8 == nuevaRevista.obtenerPrecioDelProducto());
 	}
 	

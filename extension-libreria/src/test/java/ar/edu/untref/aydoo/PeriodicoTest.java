@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ar.edu.untref.aydoo.Periodico;
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public class PeriodicoTest {
 
@@ -17,7 +17,7 @@ public class PeriodicoTest {
 	}
 
 	@Test
-	public void comprobarPrecioMensual() throws AlquilerLibroExcepcion {
+	public void comprobarPrecioMensual() throws AlquilerLibroException {
 		Assert.assertEquals(300.0, nuevoPeriodico.obtenerPrecioDelProducto(),0);
 	}
 

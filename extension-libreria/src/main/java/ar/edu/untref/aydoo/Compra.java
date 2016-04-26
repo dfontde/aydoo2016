@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public class Compra {
 
@@ -8,7 +8,7 @@ public class Compra {
 	Producto nuevoProductoAComprar;
 	Suscripcion nuevaSuscripcion;
 
-	public Compra(Meses mesHechaLaCompra, Producto productoComprado) throws AlquilerLibroExcepcion {
+	public Compra(Meses mesHechaLaCompra, Producto productoComprado) throws AlquilerLibroException {
 		this.nuevoMes = mesHechaLaCompra;
 		this.nuevoProductoAComprar = productoComprado;
 		if (productoComprado.tieneSuscripcionAnual()) {

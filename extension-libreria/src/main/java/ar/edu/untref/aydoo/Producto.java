@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.exception.AlquilerLibroExcepcion;
+import ar.edu.untref.aydoo.exception.AlquilerLibroException;
 
 public abstract class Producto {
 
@@ -12,7 +12,7 @@ public abstract class Producto {
 		this.tieneSuscripcionAnual = suscripcionAnual;
 	}
 
-	public double obtenerPrecioDelProducto() throws AlquilerLibroExcepcion {
+	public double obtenerPrecioDelProducto() throws AlquilerLibroException {
 		return this.precioDelProducto;
 	}
 
