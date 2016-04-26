@@ -36,8 +36,11 @@ ACCIONES TOMADAS:
 - Inclusion de nuevos test en la clase LibreriaTest que es una clase para test de integracion para corroborrar que todo funcione.
 4) REDISENIO para que el codigo quede cerrado para modificar pero abierto para extender.
 - Creacion de las clases AlquilerLibroDiario, AlquilerLibroMensual, AlquilerLibroCuatrimestral que implementan la interfaz AlquilerLibro obligando a sobreescribir el metodo obtenerPrecioDelProducto.
+- Deleteo de clase TipoAlquiler.
 5) Creacion de clases de excepciones que heredan de Exception para manejar los rangos permitidos en los alquileres
 6) Inclusion de throws en las clases correspondientes.
+7) Test que cubrian distintos casos entre ellos los de borde.
+8) Indentacion y refactor de las clases modificadas.
 
 CONCLUSIONES: Buena, no tuve que tocar el codigo existente (excepto los throws en las clases que correspondia), solo extendi. Ademas en el proceso me di cuenta de como hacer que mi extension permita a su vez dejar un codigo cerrado pero extendible.
 
