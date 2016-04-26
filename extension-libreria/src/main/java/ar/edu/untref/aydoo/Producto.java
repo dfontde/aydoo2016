@@ -7,17 +7,16 @@ public abstract class Producto {
 	private double precioDelProducto;
 	private boolean tieneSuscripcionAnual;
 
-	public Producto (double productoAsignaPrecio, boolean suscripcionAnual){
-
+	public Producto(double productoAsignaPrecio, boolean suscripcionAnual) {
 		this.precioDelProducto = productoAsignaPrecio;
 		this.tieneSuscripcionAnual = suscripcionAnual;
 	}
 
-	public double obtenerPrecioDelProducto () throws AlquilerLibroExcepcion{
+	public double obtenerPrecioDelProducto() throws AlquilerLibroExcepcion {
 		return this.precioDelProducto;
 	}
 
-	public void modificarPrecioDelProducto(double nuevoPrecioDelProducto){
+	public void modificarPrecioDelProducto(double nuevoPrecioDelProducto) {
 		this.precioDelProducto = nuevoPrecioDelProducto;
 	}
 
