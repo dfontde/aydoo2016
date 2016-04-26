@@ -8,5 +8,5 @@ public class AlquilerLibroMensualException extends AlquilerLibroException {
 	public AlquilerLibroMensualException() {
 		super(mensaje);
 	}
-	
+
 }
