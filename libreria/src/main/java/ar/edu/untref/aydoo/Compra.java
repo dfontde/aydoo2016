@@ -5,42 +5,42 @@ import java.util.List;
 
 public class Compra {
 
-	private Mes mes;
-	private Cliente cliente;
-	private List<Producto> productos;
-	
-	public Compra(Mes mes, Cliente cliente){
-		this.mes = mes;
-		this.setCliente(cliente);
-		this.setProductos(new ArrayList<Producto>());
-	}
-	
-	public void agregarProducto(Producto producto){
-		getProductos().add(producto);
-	}
+    private Mes mes;
+    private Cliente cliente;
+    private List<Producto> productos;
 
-	public Mes getMes() {
-		return mes;
-	}
+    public Compra(Mes mes, Cliente cliente) {
+        this.mes = mes;
+        this.setCliente(cliente);
+        this.setProductos(new ArrayList<Producto>());
+    }
 
-	public void setMes(Mes mes) {
-		this.mes = mes;
-	}
+    public void agregarProducto(Producto producto) {
+        getProductos().add(producto);
+    }
 
-	public Cliente getCliente() {
-		return cliente;
-	}
+    public Mes getMes() {
+        return mes;
+    }
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+    public void setMes(Mes mes) {
+        this.mes = mes;
+    }
 
-	public List<Producto> getProductos() {
-		return productos;
-	}
+    public Cliente getCliente() {
+        return cliente;
+    }
 
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
-	}
-	
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
 }

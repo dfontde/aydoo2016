@@ -1,7 +1,6 @@
 package ar.edu.untref.aydoo;
 
 public enum Mes {
-
 	ENERO,
 	FEBRERO,
 	MARZO,
@@ -14,5 +13,4 @@ public enum Mes {
 	OCTUBRE,
 	NOVIEMBRE,
 	DICIEMBRE
-	
 }
