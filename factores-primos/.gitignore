@@ -12,3 +12,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/dowload$
 hs_err_pid*
+
+.classpath
+.project
+.settings/
